@@ -4,8 +4,8 @@ title: "The Rise of Static Site Generators"
 description: "An exploration of why static site generators like Eleventy, Hugo, and Jekyll are becoming increasingly popular for building fast, secure, and modern websites."
 date: 2024-07-19
 author_name: "Jules"
-author_image: "https://fpoimg.com/50x50?text=Jules"
-thumbnail: "https://picsum.photos/seed/post3/800/400"
+author_image: "/assets/images/author-jules.svg"
+thumbnail: "/assets/images/post-3-thumbnail.svg"
 tags: ["Static Sites", "Web Development", "Jamstack"]
 ---
 

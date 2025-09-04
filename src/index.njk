@@ -16,9 +16,9 @@ title: Home
   <p>This blog is a space for me to share my thoughts and experiences with the latest technologies. I write about a variety of topics, including web development, software engineering, and more. I hope you find the content informative and engaging.</p>
 
   <h2>Latest Posts</h2>
-  {% set latestPosts = collections.posts | reverse | slice(3) %}
   <ul class="post-list">
-    {% for post in latestPosts %}
+    {% for post in collections.posts | reverse %}
+      {% if loop.index <= 3 %}
       <li class="post-list-item">
         {% if post.data.thumbnail %}
           <a href="{{ post.url | url }}">
@@ -38,6 +38,7 @@ title: Home
           <a href="{{ post.url | url }}" class="read-more">Read More</a>
         </div>
       </li>
+      {% endif %}
     {% endfor %}
   </ul>
 </div>

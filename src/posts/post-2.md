@@ -4,8 +4,8 @@ title: "A Beginner's Guide to Docker"
 description: "Learn the fundamentals of Docker and how it can help you create, deploy, and run applications in isolated environments called containers."
 date: 2024-07-20
 author_name: "Jules"
-author_image: "https://fpoimg.com/50x50?text=Jules"
-thumbnail: "https://picsum.photos/seed/post2/800/400"
+author_image: "/assets/images/author-jules.svg"
+thumbnail: "/assets/images/post-2-thumbnail.svg"
 tags: ["Docker", "DevOps", "Containers"]
 ---
 
