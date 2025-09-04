@@ -10,88 +10,124 @@
     <header class="header">
       <div class="container">
         <a href="/My-blog-App/" class="logo">My Tech Blog</a>
-        <nav class="nav">
-          <a href="/My-blog-App/">Home</a>
-          <a href="/My-blog-App/about/">About</a>
-          <a href="/My-blog-App/contact/">Contact</a>
-        </nav>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
       </div>
     </header>
 
     <main class="main">
       <div class="container">
         
-<h1>Latest Posts</h1>
+<div class="hero">
+  <div class="hero-content">
+    <h1>Welcome to My Tech Blog</h1>
+    <p>Exploring the latest in technology, one post at a time.</p>
+    <a href="/My-blog-App/blog/" class="button">Read the Blog</a>
+  </div>
+</div>
 
-<ul class="post-list">
-  
-    <li class="post-list-item">
-      
-        <a href="/My-blog-App/posts/post-13/">
-          <img src="https://picsum.photos/seed/post13/800/400" alt="Thumbnail for Automating Your Infrastructure with Ansible Playbooks" class="post-thumbnail">
-        </a>
-      
-      <div class="post-list-item-content">
-        <h2 class="post-title">
-          <a href="/My-blog-App/posts/post-13/">Automating Your Infrastructure with Ansible Playbooks</a>
-        </h2>
-        <p class="post-meta">
-          <time datetime="2024-08-03">August 3, 2024</time>
-        </p>
-        <p class="post-excerpt">
-          Ansible is a radically simple IT automation engine that automates configuration management, application deployment, and many other IT needs. Learn the basics of writing Ansible Playbooks to automate your tasks.
-        </p>
-        <a href="/My-blog-App/posts/post-13/" class="read-more">Read More</a>
-      </div>
-    </li>
-  
-    <li class="post-list-item">
-      
-        <a href="/My-blog-App/posts/post-12/">
-          <img src="https://picsum.photos/seed/post12/800/400" alt="Thumbnail for Monitoring Your Applications with Prometheus and Grafana" class="post-thumbnail">
-        </a>
-      
-      <div class="post-list-item-content">
-        <h2 class="post-title">
-          <a href="/My-blog-App/posts/post-12/">Monitoring Your Applications with Prometheus and Grafana</a>
-        </h2>
-        <p class="post-meta">
-          <time datetime="2024-08-02">August 2, 2024</time>
-        </p>
-        <p class="post-excerpt">
-          Prometheus is a powerful open-source monitoring and alerting toolkit. Paired with Grafana for visualization, it forms a comprehensive solution for observing the health and performance of your systems.
-        </p>
-        <a href="/My-blog-App/posts/post-12/" class="read-more">Read More</a>
-      </div>
-    </li>
-  
-    <li class="post-list-item">
-      
-        <a href="/My-blog-App/posts/post-11/">
-          <img src="https://picsum.photos/seed/post11/800/400" alt="Thumbnail for Infrastructure as Code with Terraform: A Practical Guide" class="post-thumbnail">
-        </a>
-      
-      <div class="post-list-item-content">
-        <h2 class="post-title">
-          <a href="/My-blog-App/posts/post-11/">Infrastructure as Code with Terraform: A Practical Guide</a>
-        </h2>
-        <p class="post-meta">
-          <time datetime="2024-08-01">August 1, 2024</time>
-        </p>
-        <p class="post-excerpt">
-          Terraform allows you to define and provision your cloud infrastructure using a simple, declarative language. This guide introduces the core concepts of Terraform and walks through a basic example.
-        </p>
-        <a href="/My-blog-App/posts/post-11/" class="read-more">Read More</a>
-      </div>
-    </li>
-  
-</ul>
+<div class="home-content">
+  <h2>About This Blog</h2>
+  <p>This blog is a space for me to share my thoughts and experiences with the latest technologies. I write about a variety of topics, including web development, software engineering, and more. I hope you find the content informative and engaging.</p>
 
-<nav class="pagination">
-  <a href="." class="pagination-link" disabled>Previous</a>
-  <span class="pagination-page">Page 1 of 5</span>
-  <a href="/My-blog-App/1/" class="pagination-link" >Next</a>
-</nav>
+  <h2>Latest Posts</h2>
+  <ul class="post-list">
+    
+      
+      <li class="post-list-item">
+        
+          <a href="/My-blog-App/posts/post-13/">
+            <img src="/assets/images/post-13-thumbnail.svg" alt="Thumbnail for Automating Your Infrastructure with Ansible Playbooks" class="post-thumbnail">
+          </a>
+        
+        <div class="post-list-item-content">
+          <h2 class="post-title">
+            <a href="/My-blog-App/posts/post-13/">Automating Your Infrastructure with Ansible Playbooks</a>
+          </h2>
+          <p class="post-meta">
+            <time datetime="2024-08-03">August 3, 2024</time>
+          </p>
+          <p class="post-excerpt">
+            Ansible is a radically simple IT automation engine that automates configuration management, application deployment, and many other IT needs. Learn the basics of writing Ansible Playbooks to automate your tasks.
+          </p>
+          <a href="/My-blog-App/posts/post-13/" class="read-more">Read More</a>
+        </div>
+      </li>
+      
+    
+      
+      <li class="post-list-item">
+        
+          <a href="/My-blog-App/posts/post-12/">
+            <img src="/assets/images/post-12-thumbnail.svg" alt="Thumbnail for Monitoring Your Applications with Prometheus and Grafana" class="post-thumbnail">
+          </a>
+        
+        <div class="post-list-item-content">
+          <h2 class="post-title">
+            <a href="/My-blog-App/posts/post-12/">Monitoring Your Applications with Prometheus and Grafana</a>
+          </h2>
+          <p class="post-meta">
+            <time datetime="2024-08-02">August 2, 2024</time>
+          </p>
+          <p class="post-excerpt">
+            Prometheus is a powerful open-source monitoring and alerting toolkit. Paired with Grafana for visualization, it forms a comprehensive solution for observing the health and performance of your systems.
+          </p>
+          <a href="/My-blog-App/posts/post-12/" class="read-more">Read More</a>
+        </div>
+      </li>
+      
+    
+      
+      <li class="post-list-item">
+        
+          <a href="/My-blog-App/posts/post-11/">
+            <img src="/assets/images/post-11-thumbnail.svg" alt="Thumbnail for Infrastructure as Code with Terraform: A Practical Guide" class="post-thumbnail">
+          </a>
+        
+        <div class="post-list-item-content">
+          <h2 class="post-title">
+            <a href="/My-blog-App/posts/post-11/">Infrastructure as Code with Terraform: A Practical Guide</a>
+          </h2>
+          <p class="post-meta">
+            <time datetime="2024-08-01">August 1, 2024</time>
+          </p>
+          <p class="post-excerpt">
+            Terraform allows you to define and provision your cloud infrastructure using a simple, declarative language. This guide introduces the core concepts of Terraform and walks through a basic example.
+          </p>
+          <a href="/My-blog-App/posts/post-11/" class="read-more">Read More</a>
+        </div>
+      </li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </ul>
+</div>
 
       </div>
     </main>
@@ -101,5 +137,6 @@
         <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
       </div>
     </footer>
+    <script src="/My-blog-App/js/main.js"></script>
   </body>
 </html>

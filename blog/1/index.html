@@ -3,18 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | My Tech Blog</title>
+    <title>Blog | My Tech Blog</title>
     <link rel="stylesheet" href="/My-blog-App/css/style.css">
   </head>
   <body>
     <header class="header">
       <div class="container">
         <a href="/My-blog-App/" class="logo">My Tech Blog</a>
-        <nav class="nav">
-          <a href="/My-blog-App/">Home</a>
-          <a href="/My-blog-App/about/">About</a>
-          <a href="/My-blog-App/contact/">Contact</a>
-        </nav>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
       </div>
     </header>
 
@@ -28,7 +32,7 @@
     <li class="post-list-item">
       
         <a href="/My-blog-App/posts/post-10/">
-          <img src="https://picsum.photos/seed/post10/800/400" alt="Thumbnail for Kubernetes 101: Understanding Pods, Services, and Deployments" class="post-thumbnail">
+          <img src="/assets/images/post-10-thumbnail.svg" alt="Thumbnail for Kubernetes 101: Understanding Pods, Services, and Deployments" class="post-thumbnail">
         </a>
       
       <div class="post-list-item-content">
@@ -48,7 +52,7 @@
     <li class="post-list-item">
       
         <a href="/My-blog-App/posts/post-9/">
-          <img src="https://picsum.photos/seed/post9/800/400" alt="Thumbnail for Configuring Nginx as a Reverse Proxy" class="post-thumbnail">
+          <img src="/assets/images/post-9-thumbnail.svg" alt="Thumbnail for Configuring Nginx as a Reverse Proxy" class="post-thumbnail">
         </a>
       
       <div class="post-list-item-content">
@@ -68,7 +72,7 @@
     <li class="post-list-item">
       
         <a href="/My-blog-App/posts/post-8/">
-          <img src="https://picsum.photos/seed/post8/800/400" alt="Thumbnail for An Introduction to Redis: The In-Memory Data Store" class="post-thumbnail">
+          <img src="/assets/images/post-8-thumbnail.svg" alt="Thumbnail for An Introduction to Redis: The In-Memory Data Store" class="post-thumbnail">
         </a>
       
       <div class="post-list-item-content">
@@ -88,9 +92,9 @@
 </ul>
 
 <nav class="pagination">
-  <a href="/My-blog-App/" class="pagination-link" >Previous</a>
+  <a href="/My-blog-App/blog/" class="pagination-link" >Previous</a>
   <span class="pagination-page">Page 2 of 5</span>
-  <a href="/My-blog-App/2/" class="pagination-link" >Next</a>
+  <a href="/My-blog-App/blog/2/" class="pagination-link" >Next</a>
 </nav>
 
       </div>
@@ -101,5 +105,6 @@
         <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
       </div>
     </footer>
+    <script src="/My-blog-App/js/main.js"></script>
   </body>
 </html>

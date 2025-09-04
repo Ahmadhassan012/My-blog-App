@@ -10,11 +10,15 @@
     <header class="header">
       <div class="container">
         <a href="/My-blog-App/" class="logo">My Tech Blog</a>
-        <nav class="nav">
-          <a href="/My-blog-App/">Home</a>
-          <a href="/My-blog-App/about/">About</a>
-          <a href="/My-blog-App/contact/">Contact</a>
-        </nav>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
       </div>
     </header>
 
@@ -26,11 +30,11 @@
     <h1 class="post-title">Understanding Async/Await in JavaScript</h1>
     <div class="post-meta">
       <span>By Jules</span>
-      <img src="https://fpoimg.com/50x50?text=Jules" alt="Photo of Jules" class="author-image">
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
       <span> on <time datetime="2024-07-21">July 21, 2024</time></span>
     </div>
     
-      <img src="https://picsum.photos/seed/post1/800/400" alt="Thumbnail for Understanding Async/Await in JavaScript" class="post-thumbnail">
+      <img src="/assets/images/post-1-thumbnail.svg" alt="Thumbnail for Understanding Async/Await in JavaScript" class="post-thumbnail">
     
   </header>
 
@@ -73,26 +77,6 @@
   </div>
 </article>
 
-<style>
-.post-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-.author-image {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  vertical-align: middle;
-  margin: 0 10px;
-}
-.post-thumbnail {
-  max-width: 100%;
-  height: auto;
-  margin-top: 20px;
-  border-radius: 8px;
-}
-</style>
-
       </div>
     </main>
 
@@ -101,5 +85,6 @@
         <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
       </div>
     </footer>
+    <script src="/My-blog-App/js/main.js"></script>
   </body>
 </html>
