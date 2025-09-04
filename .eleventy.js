@@ -17,6 +17,7 @@ module.exports = function(eleventyConfig) {
     dir: {
       input: "src",
       output: "_site"
-    }
+    },
+    pathPrefix: "/My-blog-App/"
   };
 };
