@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Networking: The OSI Model | My Tech Blog</title>
+    <link rel="stylesheet" href="/My-blog-App/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/My-blog-App/" class="logo">My Tech Blog</a>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">Understanding Networking: The OSI Model</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2025-09-04">September 4, 2025</time></span>
+    </div>
+    
+      <img src="/assets/images/post-10-thumbnail.svg" alt="Thumbnail for Understanding Networking: The OSI Model" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>Computer networking can seem like a black box. How does data get from your computer to a server on the other side of the world? The Open Systems Interconnection (OSI) model is a conceptual framework that helps us understand and standardize the complex processes involved in network communication. The OSI model breaks down the communication process into seven distinct layers, each with its own specific responsibilities.</p>
+<p>Here's a brief overview of the 7 layers of the OSI model, from the bottom up:</p>
+<ol>
+<li>
+<p><strong>Physical Layer:</strong> This is the lowest layer of the OSI model. It deals with the physical connection between devices, such as the cables, switches, and other hardware. It's responsible for transmitting raw binary data (bits) over a physical medium.</p>
+</li>
+<li>
+<p><strong>Data Link Layer:</strong> This layer is responsible for node-to-node data transfer and error detection. It takes the raw data from the Physical Layer and organizes it into frames. It also manages how devices on the same network gain access to the physical medium.</p>
+</li>
+<li>
+<p><strong>Network Layer:</strong> This layer is responsible for routing data between different networks. It's where IP addresses and routing protocols live. The Network Layer determines the best path for data to travel from the source to the destination.</p>
+</li>
+<li>
+<p><strong>Transport Layer:</strong> This layer provides reliable data transfer between two systems. It's responsible for flow control, error correction, and ensuring that data is delivered in the correct order. The two most common protocols at this layer are TCP (Transmission Control Protocol) and UDP (User Datagram Protocol).</p>
+</li>
+<li>
+<p><strong>Session Layer:</strong> This layer is responsible for establishing, managing, and terminating sessions between applications. It handles things like authentication and authorization.</p>
+</li>
+<li>
+<p><strong>Presentation Layer:</strong> This layer is responsible for translating, encrypting, and compressing data. It ensures that data from the sending application can be understood by the receiving application.</p>
+</li>
+<li>
+<p><strong>Application Layer:</strong> This is the highest layer of the OSI model, and it's the one that is closest to the end user. It provides services for user applications, such as email, file transfer, and web browsing. Examples of Application Layer protocols include HTTP, FTP, and SMTP.</p>
+</li>
+</ol>
+<p>While the OSI model is a theoretical model, it provides a valuable framework for understanding how computer networks work and for troubleshooting network problems. In practice, the more widely used model is the TCP/IP model, which is a simplified version of the OSI model. This post will serve as your guide to understanding this fundamental networking concept.</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/My-blog-App/js/main.js"></script>
+  </body>
+</html>

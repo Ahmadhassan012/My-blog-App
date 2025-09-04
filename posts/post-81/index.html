@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Difference Between Compilers and Interpreters | My Tech Blog</title>
+    <link rel="stylesheet" href="/My-blog-App/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/My-blog-App/" class="logo">My Tech Blog</a>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">The Difference Between Compilers and Interpreters</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2025-09-04">September 4, 2025</time></span>
+    </div>
+    
+      <img src="/assets/images/post-8-thumbnail.svg" alt="Thumbnail for The Difference Between Compilers and Interpreters" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>When you write code in a high-level programming language like C++ or Python, you're writing instructions that are readable to humans. However, a computer's processor can only understand machine code, which is a series of binary instructions. The process of translating your human-readable code into machine code is handled by either a compiler or an interpreter.</p>
+<h3>Compilers</h3>
+<p>A <strong>compiler</strong> is a program that translates the entire source code of a program into machine code at once. This process is called compilation. The result of the compilation is an executable file that can be run by the computer's operating system. Languages like C, C++, and Java are typically compiled.</p>
+<p><strong>Key characteristics of compilers:</strong></p>
+<ul>
+<li>The entire program is translated before it is run.</li>
+<li>The generated machine code is often faster and more efficient.</li>
+<li>Error checking is done after the entire program is parsed, so you'll get a list of all errors at once.</li>
+<li>The compilation process can be slow for large programs.</li>
+</ul>
+<h3>Interpreters</h3>
+<p>An <strong>interpreter</strong>, on the other hand, translates and executes the source code line by line. It doesn't produce a separate executable file. Instead, the interpreter reads a line of code, translates it to machine code, and executes it immediately. This process is repeated for each line of the program. Languages like Python, JavaScript, and Ruby are typically interpreted.</p>
+<p><strong>Key characteristics of interpreters:</strong></p>
+<ul>
+<li>The program is translated and executed line by line.</li>
+<li>Interpreted programs are often slower than compiled programs because the translation happens at runtime.</li>
+<li>Error checking is done line by line, so the program will stop as soon as it encounters an error.</li>
+<li>Interpreted languages are often more flexible and easier to debug.</li>
+</ul>
+<p>Some languages, like Java and Python, use a combination of both compilation and interpretation. For example, Java code is first compiled into an intermediate form called bytecode, which is then interpreted by the Java Virtual Machine (JVM).</p>
+<p>Understanding the difference between compilers and interpreters is a fundamental concept in computer science that helps you understand how your code is executed and why different languages have different performance characteristics.</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/My-blog-App/js/main.js"></script>
+  </body>
+</html>

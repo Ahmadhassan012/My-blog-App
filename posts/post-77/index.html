@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursion: The Art of Solving Problems by Solving Smaller Ones | My Tech Blog</title>
+    <link rel="stylesheet" href="/My-blog-App/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/My-blog-App/" class="logo">My Tech Blog</a>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">Recursion: The Art of Solving Problems by Solving Smaller Ones</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2025-09-04">September 4, 2025</time></span>
+    </div>
+    
+      <img src="/assets/images/post-4-thumbnail.svg" alt="Thumbnail for Recursion: The Art of Solving Problems by Solving Smaller Ones" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>Recursion is a powerful programming technique where a function calls itself to solve a problem. It's a fundamental concept in computer science, and it's used in many algorithms, from sorting and searching to traversing complex data structures like trees and graphs.</p>
+<p>The key to understanding recursion is to think about breaking a problem down into smaller, self-similar subproblems. A recursive function has two main parts:</p>
+<ol>
+<li><strong>Base Case:</strong> This is the condition under which the function stops calling itself. Without a base case, a recursive function would run forever, leading to a stack overflow error.</li>
+<li><strong>Recursive Step:</strong> This is where the function calls itself with a modified input, moving closer to the base case.</li>
+</ol>
+<p>A classic example of recursion is calculating the factorial of a number. The factorial of a non-negative integer <code>n</code>, denoted by <code>n!</code>, is the product of all positive integers less than or equal to <code>n</code>. For example, <code>5! = 5 * 4 * 3 * 2 * 1 = 120</code>.</p>
+<p>A recursive function to calculate the factorial would look like this:</p>
+<pre><code class="language-javascript">function factorial(n) {
+  // Base case
+  if (n === 0) {
+    return 1;
+  }
+  // Recursive step
+  return n * factorial(n - 1);
+}
+</code></pre>
+<p>In this post, we'll explore more examples of recursion to help you build a solid understanding of this elegant problem-solving approach.</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/My-blog-App/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Are Regular Expressions? | My Tech Blog</title>
+    <link rel="stylesheet" href="/My-blog-App/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/My-blog-App/" class="logo">My Tech Blog</a>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">What Are Regular Expressions?</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2025-09-04">September 4, 2025</time></span>
+    </div>
+    
+      <img src="/assets/images/post-3-thumbnail.svg" alt="Thumbnail for What Are Regular Expressions?" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>A regular expression, often shortened to &quot;regex&quot; or &quot;regexp,&quot; is a sequence of characters that defines a search pattern. It's a powerful tool for searching, matching, and manipulating text. You can think of it as a super-powered version of the &quot;find&quot; or &quot;search&quot; feature in your text editor.</p>
+<p>Regular expressions are used in many different programming languages and tools, including Python, JavaScript, Java, Perl, and <code>grep</code>. They can be used for a wide variety of tasks, such as:</p>
+<ul>
+<li>Validating user input (e.g., checking if an email address is in the correct format).</li>
+<li>Searching for and replacing text in a file.</li>
+<li>Parsing log files to extract specific information.</li>
+<li>Scraping data from websites.</li>
+</ul>
+<h3>Basic Syntax</h3>
+<p>Regular expressions have their own syntax, which can look a bit intimidating at first. Here are a few basic examples to get you started:</p>
+<ul>
+<li><code>.</code> - Matches any single character.</li>
+<li><code>*</code> - Matches the preceding character zero or more times.</li>
+<li><code>+</code> - Matches the preceding character one or more times.</li>
+<li><code>?</code> - Matches the preceding character zero or one time.</li>
+<li><code>\d</code> - Matches any digit (0-9).</li>
+<li><code>\w</code> - Matches any word character (alphanumeric characters plus underscore).</li>
+<li><code>\s</code> - Matches any whitespace character (space, tab, newline).</li>
+<li><code>[]</code> - Matches any character within the brackets (e.g., <code>[abc]</code> matches 'a', 'b', or 'c').</li>
+<li><code>()</code> - Groups characters together.</li>
+<li><code>|</code> - Acts as an &quot;OR&quot; operator (e.g., <code>cat|dog</code> matches &quot;cat&quot; or &quot;dog&quot;).</li>
+</ul>
+<h3>A Simple Example</h3>
+<p>Let's say you want to find all the email addresses in a piece of text. A simple regular expression for an email address might look like this:</p>
+<p><code>\w+@\w+\.\w+</code></p>
+<p>Let's break it down:</p>
+<ul>
+<li><code>\w+</code> - Matches one or more word characters (for the username).</li>
+<li><code>@</code> - Matches the &quot;@&quot; symbol.</li>
+<li><code>\w+</code> - Matches one or more word characters (for the domain name).</li>
+<li><code>\.</code> - Matches a literal dot (the backslash escapes the dot, which is a special character).</li>
+<li><code>\w+</code> - Matches one or more word characters (for the top-level domain, like &quot;com&quot; or &quot;org&quot;).</li>
+</ul>
+<p>This is a simplified example, and a more robust regex for email validation would be much more complex. However, it gives you an idea of the power and flexibility of regular expressions.</p>
+<p>Learning regular expressions can be a bit of a challenge, but it's a valuable skill that will save you a lot of time and effort when working with text. There are many online tools, like regex101.com, that can help you practice and visualize your regular expressions.</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/My-blog-App/js/main.js"></script>
+  </body>
+</html>

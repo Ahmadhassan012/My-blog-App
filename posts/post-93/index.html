@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary and Data Representation | My Tech Blog</title>
+    <link rel="stylesheet" href="/My-blog-App/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/My-blog-App/" class="logo">My Tech Blog</a>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">Binary and Data Representation</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2025-09-04">September 4, 2025</time></span>
+    </div>
+    
+      <img src="/assets/images/post-7-thumbnail.svg" alt="Thumbnail for Binary and Data Representation" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>At the most fundamental level, computers store and process information using a binary system. This means that all data, from text and images to videos and music, is represented as a series of 0s and 1s. In this post, we'll explore the basics of binary and other data representation systems.</p>
+<h3>Binary</h3>
+<p>The binary system is a base-2 number system, which means that it only has two digits: 0 and 1. Each digit is called a <strong>bit</strong>. A group of 8 bits is called a <strong>byte</strong>. A single byte can represent 256 different values (2^8).</p>
+<p>For example, the decimal number <code>10</code> is represented in binary as <code>1010</code>. Let's break it down:</p>
+<ul>
+<li>The rightmost digit is the 2^0 place (1).</li>
+<li>The next digit to the left is the 2^1 place (2).</li>
+<li>The next digit is the 2^2 place (4).</li>
+<li>The next digit is the 2^3 place (8).</li>
+</ul>
+<p>So, <code>1010</code> in binary is <code>(1 * 8) + (0 * 4) + (1 * 2) + (0 * 1) = 10</code>.</p>
+<h3>Hexadecimal</h3>
+<p>While computers use binary, it can be very verbose for humans to read. That's where hexadecimal comes in. The hexadecimal system is a base-16 number system, which means that it has 16 digits: 0-9 and A-F. Hexadecimal is often used as a more human-readable way to represent binary data.</p>
+<p>One hexadecimal digit can represent 4 bits. This makes it easy to convert between binary and hexadecimal. For example, the binary number <code>11010110</code> can be split into two 4-bit groups: <code>1101</code> and <code>0110</code>.</p>
+<ul>
+<li><code>1101</code> in binary is <code>13</code> in decimal, which is <code>D</code> in hexadecimal.</li>
+<li><code>0110</code> in binary is <code>6</code> in decimal, which is <code>6</code> in hexadecimal.
+So, <code>11010110</code> in binary is <code>D6</code> in hexadecimal.</li>
+</ul>
+<h3>Character Encoding</h3>
+<p>So how do we represent text in binary? That's where character encoding comes in. A character encoding is a system that maps characters to numbers.</p>
+<ul>
+<li>
+<p><strong>ASCII (American Standard Code for Information Interchange)</strong> was one of the first character encoding standards. It uses 7 bits to represent 128 characters, including the English alphabet, numbers, and punctuation.</p>
+</li>
+<li>
+<p><strong>Unicode</strong> is a more modern character encoding standard that supports a much wider range of characters, including characters from almost all of the world's writing systems. The most common Unicode encoding is <strong>UTF-8</strong>, which is backward-compatible with ASCII and uses a variable number of bytes to represent each character.</p>
+</li>
+</ul>
+<p>Understanding how data is represented in a computer is a fundamental concept in computer science. It's the foundation upon which all software is built. This post has just scratched the surface, but hopefully, it has given you a good starting point for further exploration.</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/My-blog-App/js/main.js"></script>
+  </body>
+</html>
