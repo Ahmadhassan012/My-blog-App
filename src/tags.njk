@@ -1,0 +1,36 @@
+---
+pagination:
+  data: collections.tagsList
+  size: 1
+  alias: tag
+permalink: "/tags/{{ tag | slug }}/"
+layout: base.njk
+---
+
+<h1>Posts tagged “{{ tag }}”</h1>
+
+<ul class="post-list">
+  {% for post in collections.posts | reverse %}
+    {% if tag in post.data.tags %}
+      <li class="post-list-item">
+        {% if post.data.thumbnail %}
+          <a href="{{ post.url | url }}">
+            <img src="{{ post.data.thumbnail }}" alt="Thumbnail for {{ post.data.title }}" class="post-thumbnail">
+          </a>
+        {% endif %}
+        <div class="post-list-item-content">
+          <h2 class="post-title">
+            <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+          </h2>
+          <p class="post-meta">
+            <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+          </p>
+          <p class="post-excerpt">
+            {{ post.data.description }}
+          </p>
+          <a href="{{ post.url | url }}" class="read-more">Read More</a>
+        </div>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

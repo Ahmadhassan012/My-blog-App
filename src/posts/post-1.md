@@ -7,6 +7,7 @@ author_name: "Jules"
 author_image: "/assets/images/author-jules.svg"
 thumbnail: "/assets/images/post-1-thumbnail.svg"
 tags: ["JavaScript", "Web Development", "Programming"]
+featured: true
 ---
 
 Asynchronous programming is a cornerstone of modern web development, allowing us to perform tasks like fetching data from an API without blocking the main thread. For a long time, this was handled primarily with callbacks, which often led to a confusing, nested structure known as "callback hell."
