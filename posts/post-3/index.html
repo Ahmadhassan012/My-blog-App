@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rise of Static Site Generators | My Tech Blog</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/" class="logo">My Tech Blog</a>
+        <nav class="nav">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">The Rise of Static Site Generators</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="https://fpoimg.com/50x50?text=Jules" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2024-07-19">July 19, 2024</time></span>
+    </div>
+    
+      <img src="https://picsum.photos/seed/post3/800/400" alt="Thumbnail for The Rise of Static Site Generators" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>In the early days of the web, most websites were static collections of HTML files. As the web evolved, dynamic, database-driven sites built with content management systems (CMS) like WordPress and Drupal became the norm. However, the pendulum is now swinging back towards static, thanks to a new generation of tools called static site generators (SSGs).</p>
+<h2>What are Static Site Generators?</h2>
+<p>A static site generator is a tool that takes your content (usually written in Markdown), applies it to a set of templates, and generates a website made up of purely static HTML, CSS, and JavaScript files. This pre-built site can then be served directly from a content delivery network (CDN), making it incredibly fast and secure.</p>
+<p>Some of the most popular SSGs today include:</p>
+<ul>
+<li><strong>Eleventy (11ty):</strong> Known for its flexibility and simplicity. It's what this blog is built with!</li>
+<li><strong>Hugo:</strong> Famous for its incredible build speed, written in Go.</li>
+<li><strong>Jekyll:</strong> One of the originals, it powers GitHub Pages.</li>
+<li><strong>Next.js &amp; Gatsby:</strong> Powerful React-based frameworks that can function as SSGs.</li>
+</ul>
+<h3>Why are SSGs Gaining Popularity?</h3>
+<p>The rise of SSGs is closely tied to the <strong>Jamstack</strong> architecture (JavaScript, APIs, and Markup). This modern approach to web development offers several key advantages over traditional dynamic sites:</p>
+<ul>
+<li><strong>Performance:</strong> Static sites are incredibly fast because there's no database to query or server-side code to execute. The files are already built and ready to be served from a CDN close to the user.</li>
+<li><strong>Security:</strong> With no database or server-side vulnerabilities to exploit, static sites are inherently more secure. The attack surface is significantly reduced.</li>
+<li><strong>Scalability:</strong> Serving static files is trivial to scale. CDNs are designed to handle massive amounts of traffic with ease.</li>
+<li><strong>Developer Experience:</strong> Developers can use modern tools and workflows they love. Content is often managed in Git, allowing for version control and atomic deploys.</li>
+</ul>
+<h2>Is a Static Site Right for You?</h2>
+<p>Static sites are a perfect fit for blogs, portfolios, documentation sites, and marketing websites. While they may not be suitable for highly dynamic applications like social networks or e-commerce stores (though even that is changing with hybrid approaches), they represent a powerful and efficient way to build a significant portion of the web.</p>
+<p>If you're looking to build a website that is fast, secure, and a joy to develop, a static site generator is an excellent choice.</p>
+
+  </div>
+</article>
+
+<style>
+.post-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.author-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin: 0 10px;
+}
+.post-thumbnail {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+</style>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
