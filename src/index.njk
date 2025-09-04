@@ -16,7 +16,7 @@ title: Home
   <p>This blog is a space for me to share my thoughts and experiences with the latest technologies. I write about a variety of topics, including web development, software engineering, and more. I hope you find the content informative and engaging.</p>
 
   <h2>Latest Posts</h2>
-  {% set latestPosts = collections.posts | reverse | limit(3) %}
+  {% set latestPosts = collections.posts | reverse | slice(3) %}
   <ul class="post-list">
     {% for post in latestPosts %}
       <li class="post-list-item">

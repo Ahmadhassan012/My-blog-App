@@ -4,8 +4,8 @@ title: "Understanding Async/Await in JavaScript"
 description: "A deep dive into how async/await simplifies asynchronous programming in JavaScript, making your code cleaner and more readable."
 date: 2024-07-21
 author_name: "Jules"
-author_image: "https://fpoimg.com/50x50?text=Jules"
-thumbnail: "https://picsum.photos/seed/post1/800/400"
+author_image: "/assets/images/author-jules.svg"
+thumbnail: "/assets/images/post-1-thumbnail.svg"
 tags: ["JavaScript", "Web Development", "Programming"]
 ---
 

@@ -141,6 +141,21 @@ body {
     border-radius: 8px;
 }
 
+.author-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin: 0 10px;
+}
+
+.post-thumbnail {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
 /* Pagination */
 .pagination {
     display: flex;
@@ -177,7 +192,7 @@ body {
 
 /* Home page */
 .hero {
-    background-image: url('https://picsum.photos/seed/tech/1600/900');
+    background-image: url('../assets/images/hero-background.svg');
     background-size: cover;
     background-position: center;
     color: #fff;
