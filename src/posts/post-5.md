@@ -1,8 +1,12 @@
 ---
+layout: post.njk
 title: "Supercharge Your Workflow: Top 10 VS Code Extensions"
-date: "2024-07-26"
 description: "Visual Studio Code is a powerful editor out of the box, but its real strength lies in its vast ecosystem of extensions. Here are 10 essential extensions to boost your productivity."
-thumbnail: "https://picsum.photos/seed/post5/800/400"
+date: "2024-07-26"
+author_name: "Jules"
+author_image: "/assets/images/author-jules.svg"
+thumbnail: "/assets/images/post-5-thumbnail.svg"
+tags: ["VS Code", "Development", "Productivity"]
 ---
 
 Visual Studio Code has become the editor of choice for millions of developers, thanks to its performance, features, and, most importantly, its extensibility. With thousands of extensions available, you can tailor the editor to your exact needs. Here are 10 extensions that are essential for any modern developer.

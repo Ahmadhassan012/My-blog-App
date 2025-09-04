@@ -1,8 +1,12 @@
 ---
+layout: post.njk
 title: "Mastering Git: A Guide to Essential Commands"
-date: "2024-07-25"
 description: "A comprehensive guide to the most essential Git commands that every developer should know. From initializing a repository to branching and merging, we cover it all."
-thumbnail: "https://picsum.photos/seed/post4/800/400"
+date: "2024-07-25"
+author_name: "Jules"
+author_image: "/assets/images/author-jules.svg"
+thumbnail: "/assets/images/post-4-thumbnail.svg"
+tags: ["Git", "Version Control", "Development"]
 ---
 
 Git is the most widely used version control system in the world. Whether you're a solo developer or part of a large team, understanding how to use Git effectively is a critical skill. This guide will walk you through the essential commands you'll use every day.

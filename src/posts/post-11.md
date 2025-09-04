@@ -1,8 +1,12 @@
 ---
+layout: post.njk
 title: "Infrastructure as Code with Terraform: A Practical Guide"
-date: "2024-08-01"
 description: "Terraform allows you to define and provision your cloud infrastructure using a simple, declarative language. This guide introduces the core concepts of Terraform and walks through a basic example."
-thumbnail: "https://picsum.photos/seed/post11/800/400"
+date: "2024-08-01"
+author_name: "Jules"
+author_image: "/assets/images/author-jules.svg"
+thumbnail: "/assets/images/post-11-thumbnail.svg"
+tags: ["Terraform", "IaC", "DevOps"]
 ---
 
 In the age of the cloud, managing infrastructure can be complex. Manually clicking through web consoles to create servers, databases, and networks is slow, error-prone, and difficult to reproduce. This is where Infrastructure as Code (IaC) comes in, and Terraform is the leading tool in the IaC space.

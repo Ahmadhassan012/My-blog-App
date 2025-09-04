@@ -1,8 +1,12 @@
 ---
+layout: post.njk
 title: "Getting Started with the Linux Command Line"
-date: "2024-07-27"
 description: "The Linux command line can be intimidating for beginners, but it's an incredibly powerful tool. This guide will introduce you to the fundamental commands for navigating and managing your filesystem."
-thumbnail: "https://picsum.photos/seed/post6/800/400"
+date: "2024-07-27"
+author_name: "Jules"
+author_image: "/assets/images/author-jules.svg"
+thumbnail: "/assets/images/post-6-thumbnail.svg"
+tags: ["Linux", "CLI", "Development"]
 ---
 
 For many developers, the command line is the most efficient way to interact with their computer. If you're new to Linux or development, learning the basics of the command line interface (CLI) is a crucial first step. This guide will cover the essentials.

@@ -1,8 +1,12 @@
 ---
+layout: post.njk
 title: "An Introduction to Redis: The In-Memory Data Store"
-date: "2024-07-29"
 description: "Redis is more than just a cache. It's a powerful and versatile in-memory data structure store that can be used as a database, cache, and message broker. Let's dive into what makes Redis so popular."
-thumbnail: "https://picsum.photos/seed/post8/800/400"
+date: "2024-07-29"
+author_name: "Jules"
+author_image: "/assets/images/author-jules.svg"
+thumbnail: "/assets/images/post-8-thumbnail.svg"
+tags: ["Redis", "Database", "Caching"]
 ---
 
 Redis (Remote Dictionary Server) is an open-source, in-memory data structure store that is famous for its speed and flexibility. Because it keeps its data in memory rather than on disk, read and write operations are incredibly fast, making it a perfect choice for high-performance applications.

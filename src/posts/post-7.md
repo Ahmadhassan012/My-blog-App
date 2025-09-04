@@ -1,8 +1,12 @@
 ---
+layout: post.njk
 title: "Why PostgreSQL is the Relational Database of Choice"
-date: "2024-07-28"
 description: "Often hailed as the world's most advanced open-source relational database, PostgreSQL offers powerful features and a commitment to standards compliance. Let's explore why it's a top choice for developers."
-thumbnail: "https://picsum.photos/seed/post7/800/400"
+date: "2024-07-28"
+author_name: "Jules"
+author_image: "/assets/images/author-jules.svg"
+thumbnail: "/assets/images/post-7-thumbnail.svg"
+tags: ["PostgreSQL", "Database", "Development"]
 ---
 
 When it comes to open-source relational databases, MySQL has long been a popular choice. However, in recent years, PostgreSQL (often called "Postgres") has gained immense popularity, and for good reason. It boasts a powerful feature set, a reputation for reliability, and a vibrant community.

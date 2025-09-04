@@ -1,8 +1,12 @@
 ---
+layout: post.njk
 title: "Monitoring Your Applications with Prometheus and Grafana"
-date: "2024-08-02"
 description: "Prometheus is a powerful open-source monitoring and alerting toolkit. Paired with Grafana for visualization, it forms a comprehensive solution for observing the health and performance of your systems."
-thumbnail: "https://picsum.photos/seed/post12/800/400"
+date: "2024-08-02"
+author_name: "Jules"
+author_image: "/assets/images/author-jules.svg"
+thumbnail: "/assets/images/post-12-thumbnail.svg"
+tags: ["Prometheus", "Grafana", "Monitoring"]
 ---
 
 In modern distributed systems, understanding what's happening inside your applications is crucial. This is where monitoring, or observability, comes in. Prometheus, a project that originated at SoundCloud and is now part of the Cloud Native Computing Foundation (CNCF), has become a cornerstone of modern monitoring stacks.
