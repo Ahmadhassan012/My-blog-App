@@ -2,6 +2,10 @@
 
 This is a modern, fast, and secure blog built with the [Eleventy](https://www.11ty.dev/) static site generator.
 
+## Live Site
+
+You can access the deployed version of the blog at: [https://ahmadhassan012.github.io/My-blog-App/](https://ahmadhassan012.github.io/My-blog-App/)
+
 ## Features
 
 *   Clean and minimalist design

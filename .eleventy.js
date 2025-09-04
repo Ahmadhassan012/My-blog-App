@@ -9,6 +9,10 @@ module.exports = function(eleventyConfig) {
     return new Date(dateObj).toISOString().split('T')[0];
   });
 
+  eleventyConfig.addCollection("posts", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/posts/*.md");
+  });
+
   return {
     dir: {
       input: "src",
