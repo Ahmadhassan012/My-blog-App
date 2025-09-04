@@ -1,0 +1,32 @@
+<p>For many developers, the command line is the most efficient way to interact with their computer. If you're new to Linux or development, learning the basics of the command line interface (CLI) is a crucial first step. This guide will cover the essentials.</p>
+<h2>Navigating the Filesystem</h2>
+<p>The first thing you need to know is how to move around. Your filesystem is a tree-like structure of directories (folders) and files.</p>
+<ul>
+<li><strong><code>pwd</code> (Print Working Directory)</strong>: This command tells you where you currently are in the filesystem.</li>
+<li><strong><code>ls</code> (List)</strong>: This command lists the contents of the current directory. You can use flags to modify its behavior: <code>ls -l</code> for a detailed list, and <code>ls -a</code> to show hidden files.</li>
+<li><strong><code>cd</code> (Change Directory)</strong>: This is how you move between directories.
+<ul>
+<li><code>cd /path/to/directory</code>: Navigates to a specific directory.</li>
+<li><code>cd ..</code>: Moves up one level in the directory tree.</li>
+<li><code>cd ~</code> or just <code>cd</code>: Takes you back to your home directory.</li>
+</ul>
+</li>
+</ul>
+<h2>Managing Files and Directories</h2>
+<p>Once you can navigate, you'll want to start creating and managing files.</p>
+<ul>
+<li><strong><code>mkdir &lt;directory-name&gt;</code> (Make Directory)</strong>: Creates a new directory.</li>
+<li><strong><code>touch &lt;file-name&gt;</code></strong>: Creates a new, empty file.</li>
+<li><strong><code>cp &lt;source&gt; &lt;destination&gt;</code> (Copy)</strong>: Copies a file or directory.</li>
+<li><strong><code>mv &lt;source&gt; &lt;destination&gt;</code> (Move)</strong>: Moves or renames a file or directory.</li>
+<li><strong><code>rm &lt;file-name&gt;</code> (Remove)</strong>: Deletes a file. Be careful, as this is permanent!</li>
+<li><strong><code>rm -r &lt;directory-name&gt;</code> (Remove Recursive)</strong>: Deletes a directory and all of its contents.</li>
+</ul>
+<h2>Viewing and Editing Files</h2>
+<ul>
+<li><strong><code>cat &lt;file-name&gt;</code></strong>: Prints the entire content of a file to the screen.</li>
+<li><strong><code>less &lt;file-name&gt;</code></strong>: Allows you to view a file one page at a time. This is better for long files. Use the arrow keys to scroll and <code>q</code> to quit.</li>
+<li><strong><code>head &lt;file-name&gt;</code> / <code>tail &lt;file-name&gt;</code></strong>: Shows the first or last 10 lines of a file, respectively.</li>
+<li><strong><code>nano &lt;file-name&gt;</code></strong>: A simple, easy-to-use command-line text editor. Perfect for quick edits.</li>
+</ul>
+<p>This is just the tip of the iceberg, but these commands form the foundation of using the Linux command line. Practice them until they become second nature, and you'll unlock a new level of control and efficiency.</p>

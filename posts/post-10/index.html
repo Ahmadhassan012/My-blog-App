@@ -1,0 +1,29 @@
+<p>Kubernetes (often abbreviated as K8s) has become the de facto standard for managing containerized applications at scale. It automates the deployment, scaling, and operation of application containers. To get started with Kubernetes, you need to understand its core building blocks.</p>
+<h2>1. Pods: The Smallest Deployable Unit</h2>
+<p>A <strong>Pod</strong> is the smallest and simplest unit in the Kubernetes object model that you create or deploy. It represents a single instance of a running process in your cluster.</p>
+<ul>
+<li><strong>What's inside a Pod?</strong> A Pod encapsulates one or more containers (like Docker containers), storage resources, a unique network IP, and options that govern how the container(s) should run. While a Pod can contain multiple containers, the most common use case is a single container per Pod.</li>
+<li><strong>Why not just run containers directly?</strong> Pods provide a higher-level abstraction. Containers within the same Pod share the same network namespace and can communicate with each other via <code>localhost</code>. They can also share storage volumes. This is useful for &quot;sidecar&quot; containers that support a main application container (e.g., a logging or monitoring agent).</li>
+<li><strong>Pods are ephemeral.</strong> Pods are designed to be mortal. If a Pod dies, it is not resurrected. Instead, it is replaced by a new, identical Pod. This is where Deployments come in.</li>
+</ul>
+<h2>2. Deployments: Managing Pods</h2>
+<p>A <strong>Deployment</strong> is a higher-level object that manages the state of your application. Its primary purpose is to declare how many replicas of a Pod should be running at any given time.</p>
+<ul>
+<li><strong>Declarative State</strong>: You tell the Deployment what you want your desired state to be (e.g., &quot;I want 3 replicas of my web server Pod running&quot;). The Deployment Controller then works to make the current state match the desired state.</li>
+<li><strong>Scaling</strong>: If you need to scale your application, you simply update the <code>replicas</code> field in your Deployment manifest. Kubernetes will automatically create or destroy Pods to match the new count.</li>
+<li><strong>Rolling Updates</strong>: Deployments provide a way to update your application with zero downtime. You can define a rolling update strategy, and the Deployment will gradually replace old Pods with new ones, ensuring that your application remains available throughout the update process.</li>
+</ul>
+<h2>3. Services: Exposing Your Application</h2>
+<p>A <strong>Service</strong> is an abstraction that defines a logical set of Pods and a policy by which to access them. Since Pods can be created and destroyed, their IP addresses are not stable. A Service provides a stable endpoint (a single IP address and DNS name) for a set of Pods.</p>
+<ul>
+<li><strong>Decoupling</strong>: Services decouple the frontend of your application from the backend Pods. Other parts of your application (or external users) can talk to the stable Service endpoint, and the Service will automatically route the traffic to one of the healthy Pods that it manages.</li>
+<li><strong>Load Balancing</strong>: The Service automatically load-balances requests across all the Pods in its set.</li>
+<li><strong>Types of Services</strong>:
+<ul>
+<li><strong><code>ClusterIP</code></strong>: Exposes the Service on an internal IP in the cluster. This is the default type.</li>
+<li><strong><code>NodePort</code></strong>: Exposes the Service on each Node's IP at a static port.</li>
+<li><strong><code>LoadBalancer</code></strong>: Exposes the Service externally using a cloud provider's load balancer.</li>
+</ul>
+</li>
+</ul>
+<p>Together, Pods, Deployments, and Services form the core of a Kubernetes application. A Deployment ensures your Pods are running and scalable, and a Service provides a stable way to access them. Understanding these three concepts is the key to unlocking the power of Kubernetes.</p>

@@ -1,0 +1,23 @@
+<p>Git is the most widely used version control system in the world. Whether you're a solo developer or part of a large team, understanding how to use Git effectively is a critical skill. This guide will walk you through the essential commands you'll use every day.</p>
+<h2>Initializing a Repository</h2>
+<p>To start tracking a project with Git, you first need to initialize a repository. You can do this in two ways:</p>
+<ol>
+<li><strong><code>git init</code></strong>: Use this command in an existing project directory to create a new Git repository.</li>
+<li><strong><code>git clone &lt;url&gt;</code></strong>: Use this command to create a local copy of a remote repository that already exists (e.g., on GitHub).</li>
+</ol>
+<h2>The Basic Workflow</h2>
+<p>The core Git workflow consists of modifying files, staging them, and then committing them.</p>
+<ul>
+<li><strong><code>git status</code></strong>: This is your go-to command. It shows the current state of your working directory and staging area, letting you see which files are modified, staged, or untracked.</li>
+<li><strong><code>git add &lt;file&gt;</code></strong>: This command adds a file to the staging area. The staging area is a snapshot of the changes you want to include in your next commit. You can also use <code>git add .</code> to stage all modified files.</li>
+<li><strong><code>git commit -m &quot;Your commit message&quot;</code></strong>: This takes the files from the staging area and saves them as a new snapshot in the repository's history. The commit message should be a concise description of the changes you made.</li>
+</ul>
+<h2>Branching and Merging</h2>
+<p>Branching is one of Git's most powerful features. It allows you to work on different features or fixes in isolation without affecting the main codebase.</p>
+<ul>
+<li><strong><code>git branch</code></strong>: Lists all the branches in your repository.</li>
+<li><strong><code>git branch &lt;branch-name&gt;</code></strong>: Creates a new branch.</li>
+<li><strong><code>git checkout &lt;branch-name&gt;</code></strong>: Switches to the specified branch. You can combine creating and checking out a branch with <code>git checkout -b &lt;branch-name&gt;</code>.</li>
+<li><strong><code>git merge &lt;branch-name&gt;</code></strong>: Merges the specified branch's history into your current branch. This is how you integrate changes from a feature branch back into your main branch.</li>
+</ul>
+<p>By mastering these fundamental commands, you'll be well on your way to using Git with confidence.</p>
