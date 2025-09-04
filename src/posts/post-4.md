@@ -7,6 +7,7 @@ author_name: "Jules"
 author_image: "/assets/images/author-jules.svg"
 thumbnail: "/assets/images/post-4-thumbnail.svg"
 tags: ["Git", "Version Control", "Development"]
+featured: true
 ---
 
 Git is the most widely used version control system in the world. Whether you're a solo developer or part of a large team, understanding how to use Git effectively is a critical skill. This guide will walk you through the essential commands you'll use every day.

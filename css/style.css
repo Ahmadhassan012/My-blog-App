@@ -288,3 +288,43 @@ body {
 .home-content {
     padding: 0 20px;
 }
+
+.featured-posts, .categories-section, .all-posts-link {
+    margin-bottom: 40px;
+}
+
+.categories-section h2, .featured-posts h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.tags-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--card-bg);
+    color: var(--link-color);
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    border: 1px solid var(--card-border);
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    background-color: var(--link-color);
+    color: var(--button-text);
+    border-color: var(--link-color);
+}
+
+.all-posts-link {
+    text-align: center;
+}

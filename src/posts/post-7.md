@@ -7,6 +7,7 @@ author_name: "Jules"
 author_image: "/assets/images/author-jules.svg"
 thumbnail: "/assets/images/post-7-thumbnail.svg"
 tags: ["PostgreSQL", "Database", "Development"]
+featured: true
 ---
 
 When it comes to open-source relational databases, MySQL has long been a popular choice. However, in recent years, PostgreSQL (often called "Postgres") has gained immense popularity, and for good reason. It boasts a powerful feature set, a reputation for reliability, and a vibrant community.
