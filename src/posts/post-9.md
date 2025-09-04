@@ -1,8 +1,12 @@
 ---
+layout: post.njk
 title: "Configuring Nginx as a Reverse Proxy"
-date: "2024-07-30"
 description: "Nginx is a high-performance web server, but one of its most powerful use cases is as a reverse proxy. Learn how a reverse proxy works and how to set one up with Nginx."
-thumbnail: "https://picsum.photos/seed/post9/800/400"
+date: "2024-07-30"
+author_name: "Jules"
+author_image: "/assets/images/author-jules.svg"
+thumbnail: "/assets/images/post-9-thumbnail.svg"
+tags: ["Nginx", "Reverse Proxy", "Web Server"]
 ---
 
 Nginx is a household name in web serving, renowned for its stability, rich feature set, and low resource consumption. While it's an excellent web server for static files, it truly shines when used as a reverse proxy.

@@ -1,8 +1,12 @@
 ---
+layout: post.njk
 title: "Automating Your Infrastructure with Ansible Playbooks"
-date: "2024-08-03"
 description: "Ansible is a radically simple IT automation engine that automates configuration management, application deployment, and many other IT needs. Learn the basics of writing Ansible Playbooks to automate your tasks."
-thumbnail: "https://picsum.photos/seed/post13/800/400"
+date: "2024-08-03"
+author_name: "Jules"
+author_image: "/assets/images/author-jules.svg"
+thumbnail: "/assets/images/post-13-thumbnail.svg"
+tags: ["Ansible", "Automation", "DevOps"]
 ---
 
 Ansible is an open-source automation tool that simplifies the process of configuring systems, deploying software, and orchestrating more advanced IT tasks like continuous deployments or zero downtime rolling updates. What sets Ansible apart is its simplicity and agentless architecture.

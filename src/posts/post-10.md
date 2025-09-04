@@ -1,8 +1,12 @@
 ---
+layout: post.njk
 title: "Kubernetes 101: Understanding Pods, Services, and Deployments"
-date: "2024-07-31"
 description: "Kubernetes is the leading platform for container orchestration, but its concepts can be complex. This guide breaks down the three most fundamental Kubernetes objects: Pods, Services, and Deployments."
-thumbnail: "https://picsum.photos/seed/post10/800/400"
+date: "2024-07-31"
+author_name: "Jules"
+author_image: "/assets/images/author-jules.svg"
+thumbnail: "/assets/images/post-10-thumbnail.svg"
+tags: ["Kubernetes", "DevOps", "Containers"]
 ---
 
 Kubernetes (often abbreviated as K8s) has become the de facto standard for managing containerized applications at scale. It automates the deployment, scaling, and operation of application containers. To get started with Kubernetes, you need to understand its core building blocks.
