@@ -1,0 +1,41 @@
+---
+layout: base.njk
+---
+
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ title }}</h1>
+    <div class="post-meta">
+      <span>By {{ author_name }}</span>
+      <img src="{{ author_image }}" alt="Photo of {{ author_name }}" class="author-image">
+      <span> on <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time></span>
+    </div>
+    {% if thumbnail %}
+      <img src="{{ thumbnail }}" alt="Thumbnail for {{ title }}" class="post-thumbnail">
+    {% endif %}
+  </header>
+
+  <div class="post-content">
+    {{ content | safe }}
+  </div>
+</article>
+
+<style>
+.post-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.author-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin: 0 10px;
+}
+.post-thumbnail {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+</style>

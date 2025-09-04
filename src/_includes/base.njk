@@ -3,9 +3,31 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
+    <title>{{ title }} | My Tech Blog</title>
+    <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
-    {{ content | safe }}
+    <header class="header">
+      <div class="container">
+        <a href="/" class="logo">My Tech Blog</a>
+        <nav class="nav">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        {{ content | safe }}
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>
