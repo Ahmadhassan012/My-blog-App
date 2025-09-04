@@ -1,41 +1,43 @@
 ---
 layout: base.njk
 title: Home
-pagination:
-  data: collections.posts
-  size: 3
-  alias: posts
-  reverse: true
 ---
 
-<h1>Latest Posts</h1>
+<div class="hero">
+  <div class="hero-content">
+    <h1>Welcome to My Tech Blog</h1>
+    <p>Exploring the latest in technology, one post at a time.</p>
+    <a href="{{ '/blog/' | url }}" class="button">Read the Blog</a>
+  </div>
+</div>
 
-<ul class="post-list">
-  {% for post in posts %}
-    <li class="post-list-item">
-      {% if post.data.thumbnail %}
-        <a href="{{ post.url | url }}">
-          <img src="{{ post.data.thumbnail }}" alt="Thumbnail for {{ post.data.title }}" class="post-thumbnail">
-        </a>
-      {% endif %}
-      <div class="post-list-item-content">
-        <h2 class="post-title">
-          <a href="{{ post.url | url }}">{{ post.data.title }}</a>
-        </h2>
-        <p class="post-meta">
-          <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-        </p>
-        <p class="post-excerpt">
-          {{ post.data.description }}
-        </p>
-        <a href="{{ post.url | url }}" class="read-more">Read More</a>
-      </div>
-    </li>
-  {% endfor %}
-</ul>
+<div class="home-content">
+  <h2>About This Blog</h2>
+  <p>This blog is a space for me to share my thoughts and experiences with the latest technologies. I write about a variety of topics, including web development, software engineering, and more. I hope you find the content informative and engaging.</p>
 
-<nav class="pagination">
-  <a href="{{ pagination.previousPageHref | url }}" class="pagination-link" {% if not pagination.previousPageHref %}disabled{% endif %}>Previous</a>
-  <span class="pagination-page">Page {{ pagination.pageNumber + 1 }} of {{ pagination.hrefs.length }}</span>
-  <a href="{{ pagination.nextPageHref | url }}" class="pagination-link" {% if not pagination.nextPageHref %}disabled{% endif %}>Next</a>
-</nav>
+  <h2>Latest Posts</h2>
+  {% set latestPosts = collections.posts | reverse | limit(3) %}
+  <ul class="post-list">
+    {% for post in latestPosts %}
+      <li class="post-list-item">
+        {% if post.data.thumbnail %}
+          <a href="{{ post.url | url }}">
+            <img src="{{ post.data.thumbnail }}" alt="Thumbnail for {{ post.data.title }}" class="post-thumbnail">
+          </a>
+        {% endif %}
+        <div class="post-list-item-content">
+          <h2 class="post-title">
+            <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+          </h2>
+          <p class="post-meta">
+            <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+          </p>
+          <p class="post-excerpt">
+            {{ post.data.description }}
+          </p>
+          <a href="{{ post.url | url }}" class="read-more">Read More</a>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
