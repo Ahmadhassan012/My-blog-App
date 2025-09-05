@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Recursion | My Tech Blog</title>
+    <link rel="stylesheet" href="/My-blog-App/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/My-blog-App/" class="logo">My Tech Blog</a>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">Understanding Recursion</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2024-08-06">August 6, 2024</time></span>
+    </div>
+    
+      <img src="/assets/images/post-6-thumbnail.svg" alt="Thumbnail for Understanding Recursion" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>Recursion is a programming concept that can be both powerful and a bit mind-bending at first. It's a method of solving a problem where the solution depends on solutions to smaller instances of the same problem. In this post, we'll unravel the basics of recursion.</p>
+<h2>What is a Recursive Function?</h2>
+<p>A recursive function is a function that calls itself. To prevent it from calling itself indefinitely (which would lead to a stack overflow error), a recursive function must have two key components:</p>
+<ol>
+<li><strong>Base Case:</strong> This is the condition under which the function stops calling itself. It's the simplest instance of the problem that can be solved directly.</li>
+<li><strong>Recursive Step:</strong> This is where the function calls itself with a modified input, bringing it closer to the base case.</li>
+</ol>
+<h3>A Classic Example: Factorial</h3>
+<p>The factorial of a non-negative integer <code>n</code>, denoted by <code>n!</code>, is the product of all positive integers less than or equal to <code>n</code>. For example, <code>5! = 5 * 4 * 3 * 2 * 1 = 120</code>.</p>
+<p>This can be expressed recursively:</p>
+<ul>
+<li>The factorial of 0 is 1 (the base case).</li>
+<li>The factorial of any other positive integer <code>n</code> is <code>n</code> multiplied by the factorial of <code>n-1</code> (the recursive step).</li>
+</ul>
+<p>Here's how you might write a recursive function for factorial in Python:</p>
+<pre><code class="language-python">def factorial(n):
+  # Base case
+  if n == 0:
+    return 1
+  # Recursive step
+  else:
+    return n * factorial(n - 1)
+</code></pre>
+<h2>When to Use Recursion</h2>
+<p>Recursion is particularly well-suited for problems that can be broken down into smaller, similar subproblems. It's often used in algorithms for data structures like trees and graphs, as well as in sorting algorithms like merge sort.</p>
+<p>While any recursive algorithm can be rewritten iteratively (using loops), the recursive version is often more concise and easier to read, especially for complex problems. However, it's important to be mindful of the potential for stack overflow errors with very deep recursion.</p>
+<p>Understanding recursion is a key step in mastering algorithmic thinking. It's a powerful tool to have in your programming arsenal.</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/My-blog-App/js/main.js"></script>
+  </body>
+</html>

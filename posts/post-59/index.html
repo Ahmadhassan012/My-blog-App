@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rise of Graph Neural Networks | My Tech Blog</title>
+    <link rel="stylesheet" href="/My-blog-App/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/My-blog-App/" class="logo">My Tech Blog</a>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">The Rise of Graph Neural Networks</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2024-09-15">September 15, 2024</time></span>
+    </div>
+    
+      <img src="/assets/images/post-7-thumbnail.svg" alt="Thumbnail for The Rise of Graph Neural Networks" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>Much of the success of deep learning has been in domains where the data has a regular, grid-like structure, such as images (a 2D grid of pixels) and text (a 1D sequence of words). However, many real-world datasets are not so regular. They come in the form of graphs, which are a more general and flexible data structure.</p>
+<p>This is where Graph Neural Networks (GNNs) come in. GNNs are a class of neural networks that are specifically designed to operate on graph-structured data.</p>
+<h2>Why Do We Need GNNs?</h2>
+<p>Graphs are a ubiquitous data structure. They can be used to model a wide range of systems, including:</p>
+<ul>
+<li><strong>Social networks:</strong> People are nodes, and their connections are edges.</li>
+<li><strong>Molecular structures:</strong> Atoms are nodes, and chemical bonds are edges.</li>
+<li><strong>Recommendation systems:</strong> Users and products are nodes, and their interactions are edges.</li>
+<li><strong>Knowledge graphs:</strong> Concepts are nodes, and their relationships are edges.</li>
+</ul>
+<p>Traditional deep learning models like CNNs and RNNs are not well-suited for graph data because they assume a fixed structure. GNNs, on the other hand, are designed to work with the arbitrary structure of graphs.</p>
+<h2>How Do GNNs Work?</h2>
+<p>The core idea behind GNNs is to learn a representation for each node in the graph. This is done through a process of <strong>message passing</strong> or <strong>neighborhood aggregation</strong>.</p>
+<p>At each layer of the GNN, each node aggregates information from its neighbors. This process is repeated for a number of layers, allowing each node to learn a representation that incorporates information from its local neighborhood.</p>
+<p>The process typically involves two main steps:</p>
+<ol>
+<li><strong>Aggregation:</strong> Each node collects the feature vectors of its neighbors.</li>
+<li><strong>Update:</strong> Each node updates its own feature vector based on the aggregated information from its neighbors.</li>
+</ol>
+<p>This process is similar to a convolutional operation in a CNN, but it is adapted to the irregular structure of graphs.</p>
+<h2>Types of GNNs</h2>
+<p>There are many different types of GNNs, each with its own specific architecture and aggregation function. Some of the most popular types include:</p>
+<ul>
+<li><strong>Graph Convolutional Networks (GCNs):</strong> These are one of the simplest and most popular types of GNNs.</li>
+<li><strong>GraphSAGE:</strong> This is an inductive framework that can generate embeddings for previously unseen nodes.</li>
+<li><strong>Graph Attention Networks (GATs):</strong> These models use attention mechanisms to weigh the importance of different neighbors.</li>
+</ul>
+<h2>Applications of GNNs</h2>
+<p>GNNs are being used to solve a wide range of problems, including:</p>
+<ul>
+<li><strong>Node Classification:</strong> Predicting the label of a node in a graph. For example, you could use a GNN to predict the category of a paper in a citation network.</li>
+<li><strong>Link Prediction:</strong> Predicting whether there is an edge between two nodes in a graph. This is a common task in recommendation systems.</li>
+<li><strong>Graph Classification:</strong> Predicting the label of an entire graph. For example, you could use a GNN to predict the toxicity of a molecule.</li>
+<li><strong>Community Detection:</strong> Identifying communities or clusters of nodes in a graph.</li>
+</ul>
+<h2>Conclusion</h2>
+<p>Graph Neural Networks are a powerful and flexible class of models that are extending the reach of deep learning to a whole new class of problems. By allowing us to learn from graph-structured data, GNNs are opening up new possibilities in fields ranging from drug discovery and social network analysis to recommendation systems and knowledge representation.</p>
+<p>The field of GNNs is still relatively new and is an active area of research. As the models and techniques continue to improve, we can expect to see GNNs play an increasingly important role in the future of AI. It's a key technology for unlocking the insights that are hidden in the connections in our data.</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/My-blog-App/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bias-Variance Trade-off in Machine Learning | My Tech Blog</title>
+    <link rel="stylesheet" href="/My-blog-App/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/My-blog-App/" class="logo">My Tech Blog</a>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">The Bias-Variance Trade-off in Machine Learning</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2024-09-01">September 1, 2024</time></span>
+    </div>
+    
+      <img src="/assets/images/post-6-thumbnail.svg" alt="Thumbnail for The Bias-Variance Trade-off in Machine Learning" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>When you're training a machine learning model, you want it to generalize well to new, unseen data. The ability of a model to generalize is determined by the balance between two sources of error: bias and variance. The bias-variance trade-off is a central concept in machine learning that helps us to understand the problem of overfitting and underfitting.</p>
+<h2>What is Bias?</h2>
+<p>Bias is the error introduced by approximating a real-world problem, which may be very complex, by a much simpler model. A model with high bias pays very little attention to the training data and oversimplifies the model. This leads to <strong>underfitting</strong>.</p>
+<ul>
+<li><strong>High Bias:</strong> A model with high bias will have high error on both the training and test data. It fails to capture the underlying patterns in the data.</li>
+</ul>
+<h2>What is Variance?</h2>
+<p>Variance is the error introduced by the model's sensitivity to small fluctuations in the training data. A model with high variance pays too much attention to the training data and learns the noise in the data in addition to the signal. This leads to <strong>overfitting</strong>.</p>
+<ul>
+<li><strong>High Variance:</strong> A model with high variance will have very low error on the training data but high error on the test data. It fails to generalize to new data.</li>
+</ul>
+<h2>The Trade-off</h2>
+<p>The bias-variance trade-off is the idea that as you decrease one source of error, the other tends to increase.</p>
+<ul>
+<li><strong>Low Complexity Models</strong> (e.g., linear regression) tend to have high bias and low variance. They are simple and make strong assumptions about the data.</li>
+<li><strong>High Complexity Models</strong> (e.g., a deep neural network) tend to have low bias and high variance. They are flexible and can fit the training data very well, but they are also at risk of overfitting.</li>
+</ul>
+<p>The goal of a supervised learning problem is to find a model that has the best balance between bias and variance. This is the model that will have the lowest total error on the test data.</p>
+<h2>Diagnosing and Addressing Bias and Variance</h2>
+<p>How do you know if your model is suffering from high bias or high variance?</p>
+<ul>
+<li>
+<p><strong>High Bias (Underfitting):</strong> If your model performs poorly on both the training and test data, it is likely underfitting. To address this, you can try:</p>
+<ul>
+<li>Using a more complex model.</li>
+<li>Adding more features to your data.</li>
+<li>Decreasing regularization.</li>
+</ul>
+</li>
+<li>
+<p><strong>High Variance (Overfitting):</strong> If your model performs very well on the training data but poorly on the test data, it is likely overfitting. To address this, you can try:</p>
+<ul>
+<li>Getting more training data.</li>
+<li>Using a simpler model.</li>
+<li>Increasing regularization.</li>
+<li>Using feature selection to reduce the number of features.</li>
+</ul>
+</li>
+</ul>
+<h2>Conclusion</h2>
+<p>The bias-variance trade-off is a fundamental concept that every machine learning practitioner needs to understand. It provides a framework for thinking about the problem of model complexity and helps us to diagnose and address the common problems of overfitting and underfitting. By finding the right balance between bias and variance, we can build models that not only perform well on the training data but also generalize well to new, unseen data, which is the ultimate goal of predictive modeling.</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/My-blog-App/js/main.js"></script>
+  </body>
+</html>

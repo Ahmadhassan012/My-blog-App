@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Hidden Gems: The Spaceship Operator (`&lt;=&gt;`) | My Tech Blog</title>
+    <link rel="stylesheet" href="/My-blog-App/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/My-blog-App/" class="logo">My Tech Blog</a>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">C++ Hidden Gems: The Spaceship Operator (`&lt;=&gt;`)</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2024-09-29">September 29, 2024</time></span>
+    </div>
+    
+      <img src="/images/post-8-thumbnail.svg" alt="Thumbnail for C++ Hidden Gems: The Spaceship Operator (`&lt;=&gt;`)" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>Before C++20, if you wanted to make your custom type comparable, you had to write a lot of boilerplate code. You would typically need to implement <code>operator==</code>, <code>operator!=</code>, <code>operator&lt;</code>, <code>operator&gt;</code>, <code>operator&lt;=</code>, and <code>operator&gt;=</code>. This is tedious and error-prone.</p>
+<p>C++20 introduced a new feature that dramatically simplifies this process: the <strong>three-way comparison operator</strong>, also known as the <strong>spaceship operator</strong> (<code>&lt;=&gt;</code>).</p>
+<h2>What is the Spaceship Operator?</h2>
+<p>The spaceship operator, <code>operator&lt;=&gt;</code>, is a single operator that can be used to implement all of the relational operators. It's called the spaceship operator because <code>&lt;=&gt;</code> looks a bit like a spaceship from an old arcade game.</p>
+<p>The <code>operator&lt;=&gt;</code> function returns a comparison category type, such as <code>std::strong_ordering</code>, <code>std::weak_ordering</code>, or <code>std::partial_ordering</code>. The value of this object indicates the relationship between the two compared objects:</p>
+<ul>
+<li>If the left-hand side is less than the right-hand side, it returns a value that is less than 0.</li>
+<li>If the left-hand side is equal to the right-hand side, it returns a value that is equal to 0.</li>
+<li>If the left-hand side is greater than the right-hand side, it returns a value that is greater than 0.</li>
+</ul>
+<h2>How to Use the Spaceship Operator</h2>
+<p>The magic of the spaceship operator is that if you define an <code>operator&lt;=&gt;</code> for your type, the compiler will automatically generate the other relational operators (<code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>) for you. If you also define an <code>operator==</code>, the compiler will generate <code>operator!=</code> as well.</p>
+<p>Here's an example of a simple <code>Point</code> class:</p>
+<pre><code class="language-cpp">#include &lt;compare&gt;
+#include &lt;iostream&gt;
+
+struct Point {
+    int x;
+    int y;
+
+    // The compiler will generate the rest of the operators
+    auto operator&lt;=&gt;(const Point&amp; other) const = default;
+};
+
+int main() {
+    Point p1{1, 2};
+    Point p2{1, 3};
+
+    std::cout &lt;&lt; std::boolalpha;
+    std::cout &lt;&lt; (p1 &lt; p2) &lt;&lt; std::endl;  // true
+    std::cout &lt;&lt; (p1 &gt; p2) &lt;&lt; std::endl;  // false
+    std::cout &lt;&lt; (p1 == p2) &lt;&lt; std::endl; // false
+}
+</code></pre>
+<p>By defining <code>operator&lt;=&gt;</code> as <code>= default</code>, we are telling the compiler to generate a default implementation that performs a member-wise comparison of the members of the struct in the order they are declared. This is often exactly what you want.</p>
+<h2>Customizing the Comparison</h2>
+<p>Of course, you can also provide your own custom implementation of <code>operator&lt;=&gt;</code>.</p>
+<pre><code class="language-cpp">#include &lt;compare&gt;
+
+struct Person {
+    std::string name;
+    int age;
+
+    auto operator&lt;=&gt;(const Person&amp; other) const {
+        // Compare by age first, then by name
+        if (auto cmp = age &lt;=&gt; other.age; cmp != 0) {
+            return cmp;
+        }
+        return name &lt;=&gt; other.name;
+    }
+    bool operator==(const Person&amp; other) const {
+        return age == other.age &amp;&amp; name == other.name;
+    }
+};
+</code></pre>
+<h2>Why Use the Spaceship Operator?</h2>
+<p>The spaceship operator is a major &quot;quality of life&quot; improvement for C++ developers.</p>
+<ul>
+<li><strong>Less Boilerplate:</strong> It significantly reduces the amount of boilerplate code you have to write to make your types comparable.</li>
+<li><strong>Reduced Errors:</strong> By generating the relational operators for you, it reduces the chances of making a mistake in your comparison logic.</li>
+<li><strong>Improved Readability:</strong> It makes the intent of your code clearer. A single <code>operator&lt;=&gt;</code> function is easier to read and understand than six separate relational operators.</li>
+<li><strong>More Efficient:</strong> The compiler can often generate more efficient code for the relational operators when they are derived from <code>operator&lt;=&gt;</code>.</li>
+</ul>
+<h2>Conclusion</h2>
+<p>The spaceship operator is a fantastic addition to C++20. It's a simple feature that solves a common problem in a clean and elegant way. It's a great example of how C++ is evolving to be a more expressive and developer-friendly language.</p>
+<p>If you are writing C++20 code and you need to make your types comparable, you should be using the spaceship operator. It's a hidden gem that will save you time, reduce bugs, and make your code more readable. It's a powerful new tool for your C++ toolkit. It's a small operator that makes a big difference.</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/My-blog-App/js/main.js"></script>
+  </body>
+</html>

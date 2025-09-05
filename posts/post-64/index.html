@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Hidden Gems: `std::optional` | My Tech Blog</title>
+    <link rel="stylesheet" href="/My-blog-App/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/My-blog-App/" class="logo">My Tech Blog</a>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">C++ Hidden Gems: `std::optional`</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2024-09-20">September 20, 2024</time></span>
+    </div>
+    
+      <img src="/assets/images/post-12-thumbnail.svg" alt="Thumbnail for C++ Hidden Gems: `std::optional`" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>In C++, it's common to have functions that may or may not return a value. For example, a function that searches for an item in a database might not find it. Historically, there have been several ways to handle this, such as returning a null pointer, a special error code, or throwing an exception. However, these approaches can be error-prone or verbose.</p>
+<p>C++17 introduced a more expressive and safer way to handle optional values: <code>std::optional</code>.</p>
+<h2>What is <code>std::optional</code>?</h2>
+<p><code>std::optional&lt;T&gt;</code> is a wrapper that may or may not contain a value of type <code>T</code>. It's a value type, which means it has value semantics (it's not a pointer).</p>
+<p>You can think of it as a box that either contains a <code>T</code> or is empty.</p>
+<h2>How to Use <code>std::optional</code></h2>
+<p>Here's a simple example of a function that might not return a value:</p>
+<pre><code class="language-cpp">#include &lt;optional&gt;
+#include &lt;string&gt;
+#include &lt;iostream&gt;
+
+std::optional&lt;std::string&gt; find_user(int id) {
+    if (id == 1) {
+        return &quot;Jules&quot;;
+    }
+    return std::nullopt; // Represents an empty optional
+}
+</code></pre>
+<p>To use the result of this function, you can check if it contains a value before accessing it:</p>
+<pre><code class="language-cpp">int main() {
+    auto user1 = find_user(1);
+    if (user1) { // The bool conversion checks for a value
+        std::cout &lt;&lt; &quot;Found user: &quot; &lt;&lt; *user1 &lt;&lt; std::endl; // Use * or -&gt; to access the value
+    }
+
+    auto user2 = find_user(2);
+    if (!user2) {
+        std::cout &lt;&lt; &quot;User 2 not found.&quot; &lt;&lt; std::endl;
+    }
+}
+</code></pre>
+<p><code>std::optional</code> also provides a <code>value_or</code> method, which is a convenient way to provide a default value:</p>
+<pre><code class="language-cpp">std::string user2_name = find_user(2).value_or(&quot;Guest&quot;);
+std::cout &lt;&lt; &quot;User 2 name: &quot; &lt;&lt; user2_name &lt;&lt; std::endl; // Prints &quot;Guest&quot;
+</code></pre>
+<h2>Why Use <code>std::optional</code>?</h2>
+<p><code>std::optional</code> provides several benefits over traditional approaches to optional values:</p>
+<ul>
+<li><strong>Expressiveness:</strong> It makes the intent of your code clear. When a function returns a <code>std::optional</code>, it's immediately obvious that the value may not be present.</li>
+<li><strong>Safety:</strong> It forces you to check for the presence of a value before you can use it. This helps to prevent null pointer dereferences and other common errors.</li>
+<li><strong>No Dynamic Allocation:</strong> Unlike returning a pointer, <code>std::optional</code> does not involve any dynamic memory allocation, which can improve performance.</li>
+<li><strong>Value Semantics:</strong> It behaves like a regular value, which makes it easier to work with.</li>
+</ul>
+<h2>Conclusion</h2>
+<p><code>std::optional</code> is a fantastic addition to the C++ standard library. It provides a clean, safe, and expressive way to represent optional values. If you're working with C++17 or later, you should make <code>std::optional</code> a regular part of your toolkit. It's a hidden gem that can help you to write better, more modern C++ code. It's a simple feature that can have a big impact on the clarity and correctness of your code.</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/My-blog-App/js/main.js"></script>
+  </body>
+</html>

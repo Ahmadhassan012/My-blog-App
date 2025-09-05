@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big O Notation: A Simple Explanation | My Tech Blog</title>
+    <link rel="stylesheet" href="/My-blog-App/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/My-blog-App/" class="logo">My Tech Blog</a>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">Big O Notation: A Simple Explanation</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2024-08-02">August 2, 2024</time></span>
+    </div>
+    
+      <img src="/assets/images/post-2-thumbnail.svg" alt="Thumbnail for Big O Notation: A Simple Explanation" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>If you're diving into the world of computer science or preparing for coding interviews, you've likely come across the term &quot;Big O notation.&quot; It might sound intimidating, but it's a crucial concept for understanding the efficiency of algorithms. In this post, we'll break it down in simple terms.</p>
+<h2>What is Big O Notation?</h2>
+<p>Big O notation is a mathematical notation that describes the limiting behavior of a function when the argument tends towards a particular value or infinity. In computer science, we use it to classify algorithms according to how their run time or space requirements grow as the input size grows.</p>
+<p>In simpler terms, Big O is a way to describe the performance of an algorithm. It tells you how fast an algorithm is, but not in seconds. Instead, it tells you how the runtime of an algorithm grows relative to the size of the input.</p>
+<h3>Common Big O Complexities</h3>
+<p>Here are a few common Big O complexities you'll encounter:</p>
+<ul>
+<li><strong>O(1) - Constant Time:</strong> The runtime of the algorithm is constant, regardless of the size of the input. Accessing an element in an array by its index is a classic example.</li>
+<li><strong>O(log n) - Logarithmic Time:</strong> The runtime grows logarithmically with the input size. This is very efficient, and binary search is a great example.</li>
+<li><strong>O(n) - Linear Time:</strong> The runtime grows linearly with the input size. A simple <code>for</code> loop that iterates through an array is a good example.</li>
+<li><strong>O(n^2) - Quadratic Time:</strong> The runtime grows quadratically with the input size. This is common with nested loops, like in a bubble sort algorithm.</li>
+</ul>
+<h2>Why is Big O Important?</h2>
+<p>Understanding Big O notation is essential for writing efficient and scalable code. When you're working with large datasets, the difference between an O(n) and an O(n^2) algorithm can be the difference between an application that runs smoothly and one that crashes.</p>
+<p>By analyzing the Big O complexity of your algorithms, you can make informed decisions about which solutions to implement and identify potential performance bottlenecks in your code. It's a fundamental skill for any software engineer.</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/My-blog-App/js/main.js"></script>
+  </body>
+</html>

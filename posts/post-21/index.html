@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An Introduction to Docker and Containers | My Tech Blog</title>
+    <link rel="stylesheet" href="/My-blog-App/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/My-blog-App/" class="logo">My Tech Blog</a>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">An Introduction to Docker and Containers</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2024-08-08">August 8, 2024</time></span>
+    </div>
+    
+      <img src="/assets/images/post-8-thumbnail.svg" alt="Thumbnail for An Introduction to Docker and Containers" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>If you're in the software world, you've almost certainly heard of Docker. It has become an essential tool for modern software development and deployment. In this post, we'll introduce the core concepts of Docker and containers.</p>
+<h2>What is Docker?</h2>
+<p>Docker is an open-source platform that allows you to automate the deployment, scaling, and management of applications using containers. It enables you to separate your applications from your infrastructure, so you can deliver software quickly.</p>
+<h2>What are Containers?</h2>
+<p>A container is a lightweight, standalone, and executable package of software that includes everything needed to run it: code, runtime, system tools, system libraries, and settings.</p>
+<h3>Containers vs. Virtual Machines (VMs)</h3>
+<p>You might be thinking that containers sound a lot like virtual machines. While they have some similarities, there's a key difference:</p>
+<ul>
+<li><strong>Virtual Machines</strong> virtualize the hardware. Each VM includes a full copy of an operating system, the application, necessary binaries, and libraries. This can be resource-intensive.</li>
+<li><strong>Containers</strong> virtualize the operating system. They share the host system's OS kernel. This makes them much more lightweight and faster to start up than VMs.</li>
+</ul>
+<h2>Why Use Docker?</h2>
+<p>Docker provides several benefits that have made it so popular:</p>
+<ul>
+<li><strong>Consistency:</strong> Docker containers ensure that your application runs the same way, regardless of the environment. This eliminates the classic &quot;it works on my machine&quot; problem.</li>
+<li><strong>Portability:</strong> Containers can be run on any machine that has Docker installed, whether it's a developer's laptop, a server in a data center, or a cloud provider.</li>
+<li><strong>Efficiency:</strong> Because containers are so lightweight, you can run many more of them on a single host than you could with VMs. This leads to better resource utilization.</li>
+<li><strong>Scalability:</strong> Docker makes it easy to scale your application up or down by simply starting or stopping containers.</li>
+</ul>
+<p>Docker has fundamentally changed the way we build and deploy software. By providing a consistent and portable way to package and run applications, it has become a cornerstone of modern DevOps practices. If you're not already using Docker, it's a technology that's well worth exploring.</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/My-blog-App/js/main.js"></script>
+  </body>
+</html>

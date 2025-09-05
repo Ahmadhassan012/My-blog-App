@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The SOLID Principles of Object-Oriented Design | My Tech Blog</title>
+    <link rel="stylesheet" href="/My-blog-App/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/My-blog-App/" class="logo">My Tech Blog</a>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">The SOLID Principles of Object-Oriented Design</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2024-08-11">August 11, 2024</time></span>
+    </div>
+    
+      <img src="/assets/images/post-11-thumbnail.svg" alt="Thumbnail for The SOLID Principles of Object-Oriented Design" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>When it comes to writing high-quality, maintainable, and flexible object-oriented code, the SOLID principles are a set of guidelines that every developer should know. Coined by Robert C. Martin, these five principles are designed to help you build more robust and scalable software.</p>
+<h2>The 5 SOLID Principles</h2>
+<p>Let's briefly look at each of the five principles:</p>
+<h3>1. Single Responsibility Principle (SRP)</h3>
+<p>A class should have only one reason to change. This means a class should have only one job. When a class has more than one responsibility, it becomes coupled, and a change to one responsibility might affect the other.</p>
+<h3>2. Open/Closed Principle (OCP)</h3>
+<p>Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification. This means you should be able to add new functionality without changing the existing code.</p>
+<h3>3. Liskov Substitution Principle (LSP)</h3>
+<p>Subtypes must be substitutable for their base types. In other words, if you have a class <code>B</code> that is a subclass of class <code>A</code>, you should be able to replace an object of <code>A</code> with an object of <code>B</code> without breaking the program.</p>
+<h3>4. Interface Segregation Principle (ISP)</h3>
+<p>Clients should not be forced to depend on interfaces they do not use. This principle suggests that you should favor many small, client-specific interfaces over one large, general-purpose interface.</p>
+<h3>5. Dependency Inversion Principle (DIP)</h3>
+<p>High-level modules should not depend on low-level modules. Both should depend on abstractions. Also, abstractions should not depend on details. Details should depend on abstractions. This principle encourages the use of dependency injection.</p>
+<h2>Why SOLID Matters</h2>
+<p>Adhering to the SOLID principles can lead to a system that is easier to maintain, understand, and extend. It helps to reduce complexity, improve reusability, and create a more decoupled architecture. While they might take some time to fully grasp, incorporating the SOLID principles into your development practices is a major step towards writing more professional and high-quality code.</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/My-blog-App/js/main.js"></script>
+  </body>
+</html>

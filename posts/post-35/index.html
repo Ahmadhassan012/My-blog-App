@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The CAP Theorem: A Fundamental Law of Distributed Systems | My Tech Blog</title>
+    <link rel="stylesheet" href="/My-blog-App/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/My-blog-App/" class="logo">My Tech Blog</a>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">The CAP Theorem: A Fundamental Law of Distributed Systems</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2024-08-22">August 22, 2024</time></span>
+    </div>
+    
+      <img src="/assets/images/post-9-thumbnail.svg" alt="Thumbnail for The CAP Theorem: A Fundamental Law of Distributed Systems" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>When you move from a single-server application to a distributed system, you enter a world of new challenges and trade-offs. One of the most fundamental principles that governs distributed systems is the CAP theorem. Proposed by Eric Brewer, the CAP theorem states that it is impossible for a distributed data store to simultaneously provide more than two out of the following three guarantees:</p>
+<h2>The Three Guarantees</h2>
+<ol>
+<li><strong>Consistency (C):</strong> Every read receives the most recent write or an error. In a consistent system, all nodes in the distributed system have the same data at the same time.</li>
+<li><strong>Availability (A):</strong> Every request receives a (non-error) response, without the guarantee that it contains the most recent write. In an available system, every non-failing node is able to respond to requests.</li>
+<li><strong>Partition Tolerance (P):</strong> The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes. In other words, the system is resilient to network partitions.</li>
+</ol>
+<h2>The Trade-off</h2>
+<p>The CAP theorem states that in the presence of a network partition (P), you must choose between consistency (C) and availability (A). You cannot have both.</p>
+<ul>
+<li><strong>CP (Consistent and Partition Tolerant):</strong> If you choose consistency over availability, the system will return an error or time out if it cannot guarantee that the data it is returning is the most recent write. This is a good choice for systems where data accuracy is paramount, such as banking systems.</li>
+<li><strong>AP (Available and Partition Tolerant):</strong> If you choose availability over consistency, the system will always respond to requests, even if it means returning stale data. This is a good choice for systems where high availability is critical, and eventual consistency is acceptable, such as social media feeds.</li>
+</ul>
+<p><strong>What about CA?</strong> A system that is consistent and available but not partition tolerant can exist, but it can only do so as long as there is no network partition. In any real-world distributed system, network partitions are a fact of life, so this is not a practical choice.</p>
+<h2>CAP in the Real World</h2>
+<p>The CAP theorem is not just a theoretical concept. It has a profound impact on the design of real-world distributed systems. When you are choosing a database for your application, you need to understand where it falls on the CAP spectrum.</p>
+<ul>
+<li><strong>Relational databases</strong> like PostgreSQL and MySQL are traditionally CA systems.</li>
+<li><strong>NoSQL databases</strong> are often designed to be either CP (like MongoDB) or AP (like Cassandra or CouchDB).</li>
+</ul>
+<p>The CAP theorem is a powerful tool for reasoning about the trade-offs in distributed system design. By understanding its principles, you can make more informed decisions about the architecture and technologies you choose for your applications. It forces you to think about what guarantees are most important for your specific use case.</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/My-blog-App/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Transformer Architecture: A Deep Dive | My Tech Blog</title>
+    <link rel="stylesheet" href="/My-blog-App/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/My-blog-App/" class="logo">My Tech Blog</a>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">The Transformer Architecture: A Deep Dive</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2024-08-29">August 29, 2024</time></span>
+    </div>
+    
+      <img src="/assets/images/post-3-thumbnail.svg" alt="Thumbnail for The Transformer Architecture: A Deep Dive" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>In 2017, a paper from Google titled &quot;Attention Is All You Need&quot; introduced the Transformer architecture. This model has since become the foundation for most state-of-the-art NLP models, including large language models like GPT-3 and BERT.</p>
+<h2>The Problem with Recurrent Models</h2>
+<p>Before the Transformer, recurrent neural networks (RNNs), particularly LSTMs and GRUs, were the standard for sequence-to-sequence tasks like machine translation. However, RNNs have a major limitation: they process sequences sequentially, one token at a time. This makes it difficult to parallelize the computation and limits their ability to capture long-range dependencies in the data.</p>
+<h2>The Power of Self-Attention</h2>
+<p>The Transformer architecture does away with recurrence entirely and instead relies on a mechanism called <strong>self-attention</strong>. Self-attention allows the model to weigh the importance of different words in the input sequence when processing a particular word. In essence, it allows the model to look at other words in the sequence for context.</p>
+<p>For example, when processing the sentence &quot;The cat sat on the mat,&quot; the self-attention mechanism would allow the model to understand that &quot;sat&quot; is related to &quot;cat&quot; and &quot;mat.&quot;</p>
+<h2>The Transformer Architecture</h2>
+<p>The Transformer architecture is composed of two main parts: an encoder and a decoder.</p>
+<ul>
+<li><strong>Encoder:</strong> The encoder takes a sequence of text as input and produces a sequence of continuous representations. It is composed of a stack of identical layers, each of which has two sub-layers: a multi-head self-attention mechanism and a position-wise fully connected feed-forward network.</li>
+<li><strong>Decoder:</strong> The decoder takes the output of the encoder and generates an output sequence, one token at a time. It is also composed of a stack of identical layers, but in addition to the two sub-layers from the encoder, it has a third sub-layer that performs multi-head attention over the output of the encoder.</li>
+</ul>
+<h3>Key Innovations</h3>
+<ul>
+<li><strong>Multi-Head Attention:</strong> Instead of performing a single attention function, the Transformer uses multi-head attention. This allows the model to jointly attend to information from different representation subspaces at different positions.</li>
+<li><strong>Positional Encodings:</strong> Since the model contains no recurrence or convolution, it needs a way to make use of the order of the sequence. This is done by adding &quot;positional encodings&quot; to the input embeddings. These are vectors that give the model information about the position of each word in the sequence.</li>
+</ul>
+<h2>The Impact of the Transformer</h2>
+<p>The Transformer architecture has had a profound impact on the field of NLP. Its ability to be parallelized has allowed researchers to train much larger models on much larger datasets. This has led to a series of breakthroughs, from the development of pre-trained models like BERT to the rise of large language models like GPT-3.</p>
+<p>The Transformer is a testament to the power of new ideas in research. By challenging the long-held assumption that recurrent models were the only way to handle sequences, the authors of &quot;Attention Is All You Need&quot; opened up a new era of possibilities for NLP. It's a foundational concept for anyone working in modern AI.</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/My-blog-App/js/main.js"></script>
+  </body>
+</html>

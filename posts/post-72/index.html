@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Hidden Gems: `std::span` | My Tech Blog</title>
+    <link rel="stylesheet" href="/My-blog-App/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/My-blog-App/" class="logo">My Tech Blog</a>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">C++ Hidden Gems: `std::span`</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2024-09-28">September 28, 2024</time></span>
+    </div>
+    
+      <img src="/images/post-7-thumbnail.svg" alt="Thumbnail for C++ Hidden Gems: `std::span`" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>In C++, it's very common to write functions that operate on a sequence of objects. The traditional way to do this is to pass a pointer and a length, or a pair of iterators. However, this can be verbose and error-prone.</p>
+<p>C++20 introduced a new feature that provides a better way to work with contiguous sequences of objects: <code>std::span</code>.</p>
+<h2>What is <code>std::span</code>?</h2>
+<p>A <code>std::span&lt;T&gt;</code> is a non-owning view of a contiguous sequence of objects of type <code>T</code>. It's essentially a &quot;fat pointer&quot; that holds a pointer to the beginning of the sequence and a length.</p>
+<p>You can think of it as being similar to <code>std::string_view</code>, but for any type of object, not just characters.</p>
+<h2>How to Use <code>std::span</code></h2>
+<p>You can create a <code>std::span</code> from a variety of sources, including C-style arrays, <code>std::vector</code>, and <code>std::array</code>.</p>
+<pre><code class="language-cpp">#include &lt;span&gt;
+#include &lt;vector&gt;
+#include &lt;iostream&gt;
+
+void print_span(std::span&lt;int&gt; s) {
+    for (int x : s) {
+        std::cout &lt;&lt; x &lt;&lt; &quot; &quot;;
+    }
+    std::cout &lt;&lt; std::endl;
+}
+
+int main() {
+    int c_array[] = {1, 2, 3, 4, 5};
+    print_span(c_array); // Create a span from a C-style array
+
+    std::vector&lt;int&gt; vec = {6, 7, 8, 9, 10};
+    print_span(vec); // Create a span from a std::vector
+
+    // You can also create sub-spans
+    std::span&lt;int&gt; sub_span = vec;
+    print_span(sub_span.subspan(1, 3)); // Prints 7 8 9
+}
+</code></pre>
+<p>The <code>print_span</code> function can now accept any contiguous sequence of integers, without having to be a template. This is a major advantage over the traditional iterator-based approach.</p>
+<h2>Why Use <code>std::span</code>?</h2>
+<p><code>std::span</code> offers a number of benefits over the traditional ways of working with sequences.</p>
+<ul>
+<li><strong>Safety:</strong> A <code>std::span</code> knows its own size. This helps to prevent buffer overflows and other common errors that can occur when working with raw pointers.</li>
+<li><strong>Expressiveness:</strong> It makes the intent of your code clear. When a function takes a <code>std::span</code>, it's immediately obvious that it expects a contiguous sequence of objects.</li>
+<li><strong>Flexibility:</strong> A single function that takes a <code>std::span</code> can be used with a C-style array, a <code>std::vector</code>, a <code>std::array</code>, or any other contiguous container.</li>
+<li><strong>Efficiency:</strong> Like <code>std::string_view</code>, <code>std::span</code> is a non-owning view. It doesn't make a copy of the data, so it's very efficient.</li>
+</ul>
+<h2>The Dangers of <code>std::span</code></h2>
+<p>Like <code>std::string_view</code>, the biggest advantage of <code>std::span</code> is also its biggest danger: it doesn't own the data. If the underlying container is destroyed, the <code>std::span</code> will be left dangling.</p>
+<p>You should be careful not to return a <code>std::span</code> that refers to a local variable.</p>
+<h2><code>std::span</code> vs. Pointers</h2>
+<p>You might be wondering why you should use <code>std::span</code> instead of a raw pointer and a size. The main reason is safety. A <code>std::span</code> is a bounds-checked view of the data. If you try to access an element outside of the span, you will get a compile-time or run-time error (depending on the context), whereas with a raw pointer, you would just get undefined behavior.</p>
+<h2>Conclusion</h2>
+<p><code>std::span</code> is a fantastic addition to the C++ standard library. It provides a modern, safe, and efficient way to work with contiguous sequences of objects. It's a key part of the C++20 effort to make the language safer and more expressive.</p>
+<p>If you are writing functions that operate on sequences of data, you should consider using <code>std::span</code>. It's a hidden gem that can help you to write code that is more robust, more flexible, and easier to read. It's a simple feature that can have a big impact on the quality of your C++ code. It's a better pointer for the modern era.</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/My-blog-App/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Brewer&#39;s CAP Theorem in Real Life | My Tech Blog</title>
+    <link rel="stylesheet" href="/My-blog-App/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/My-blog-App/" class="logo">My Tech Blog</a>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">The Brewer&#39;s CAP Theorem in Real Life</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2024-08-28">August 28, 2024</time></span>
+    </div>
+    
+      <img src="/assets/images/post-2-thumbnail.svg" alt="Thumbnail for The Brewer&#39;s CAP Theorem in Real Life" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>The CAP theorem, which states that a distributed data store can only provide two of the three guarantees of Consistency, Availability, and Partition Tolerance, is a cornerstone of distributed systems theory. But how does this theoretical concept play out in the real world with the databases we use?</p>
+<h2>Understanding the &quot;P&quot; is a Must</h2>
+<p>In any distributed system, network partitions are a fact of life. Servers crash, and network links fail. Therefore, any practical distributed system must be partition tolerant (P). This means the real trade-off is between consistency (C) and availability (A).</p>
+<p>Let's look at how different types of databases navigate this trade-off.</p>
+<h3>Traditional Relational Databases (CA)</h3>
+<p>Relational databases like MySQL, PostgreSQL, and Microsoft SQL Server were designed in an era before large-scale distributed systems were common. They typically prioritize consistency. In a single-server setup, you get both consistency and availability (CA).</p>
+<p>When you introduce replication for high availability, these systems often use a single-master setup. If the master database becomes unavailable due to a network partition, the system might not be able to accept writes to ensure consistency, thus sacrificing availability.</p>
+<h3>CP Databases: Prioritizing Consistency</h3>
+<p>Many NoSQL databases are designed to be distributed from the ground up and make a clear choice in the C vs. A trade-off. CP databases choose consistency over availability.</p>
+<ul>
+<li><strong>MongoDB:</strong> In a replica set, if the primary node becomes inaccessible to a majority of the nodes due to a partition, it will step down, and the replica set will elect a new primary. During this time, the system may be unavailable for writes.</li>
+<li><strong>HBase:</strong> Built on top of HDFS, HBase is a CP system. It relies on a master server to manage regions, and if the master is down, the cluster can become unavailable.</li>
+</ul>
+<p>These systems are a good fit for applications where data consistency is critical, such as e-commerce backends or financial services.</p>
+<h3>AP Databases: Prioritizing Availability</h3>
+<p>AP databases choose availability over consistency. They will always respond to a request, even if it means returning data that is not the most up-to-date (stale data). These systems typically use an &quot;eventual consistency&quot; model.</p>
+<ul>
+<li><strong>Cassandra:</strong> Designed with a masterless, peer-to-peer architecture, Cassandra is highly available. It allows for &quot;tunable consistency,&quot; where you can decide on a per-query basis how many replicas must acknowledge a read or write. At lower consistency levels, you get higher availability.</li>
+<li><strong>Amazon DynamoDB:</strong> A key-value store that prioritizes availability and performance at scale. It offers eventual consistency for reads by default but also provides an option for strongly consistent reads.</li>
+</ul>
+<p>These systems are ideal for applications that need to be highly available and can tolerate some level of data staleness, such as social media feeds, real-time analytics, or IoT data collection.</p>
+<h2>Conclusion</h2>
+<p>The CAP theorem is not just a theoretical exercise; it's a practical framework for understanding the trade-offs inherent in distributed database systems. When choosing a database for your application, it's crucial to understand where it falls on the CAP spectrum and whether its trade-offs align with the requirements of your specific use case. There is no one-size-fits-all solution, and the right choice depends on whether your application needs to prioritize consistency or availability.</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/My-blog-App/js/main.js"></script>
+  </body>
+</html>

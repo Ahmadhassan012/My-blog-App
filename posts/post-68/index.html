@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Hidden Gems: `std::string_view` | My Tech Blog</title>
+    <link rel="stylesheet" href="/My-blog-App/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/My-blog-App/" class="logo">My Tech Blog</a>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">C++ Hidden Gems: `std::string_view`</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2024-09-24">September 24, 2024</time></span>
+    </div>
+    
+      <img src="/assets/images/post-3-thumbnail.svg" alt="Thumbnail for C++ Hidden Gems: `std::string_view`" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>Working with strings is a common task in C++, but it can also be a source of performance issues. <code>std::string</code> is a powerful and flexible class, but it owns its data, which means that creating substrings or passing strings to functions can involve expensive memory allocations and copies.</p>
+<p>C++17 introduced a new string-like type that can help to avoid these costs: <code>std::string_view</code>.</p>
+<h2>What is <code>std::string_view</code>?</h2>
+<p>A <code>std::string_view</code> is a non-owning, read-only view of a string. It's essentially a pointer and a length. It allows you to refer to a string or a substring without having to make a copy of the data.</p>
+<pre><code class="language-cpp">#include &lt;string_view&gt;
+#include &lt;iostream&gt;
+
+void print_sv(std::string_view sv) {
+    std::cout &lt;&lt; sv &lt;&lt; std::endl;
+}
+
+int main() {
+    std::string s = &quot;Hello, world!&quot;;
+    std::string_view sv = s;
+
+    print_sv(sv); // No copy of the string data is made
+
+    // You can also create a string_view from a C-style string
+    const char* c_str = &quot;Hello, C-style string!&quot;;
+    print_sv(c_str);
+
+    // You can easily create substrings without any allocations
+    std::string_view sub = sv.substr(0, 5);
+    print_sv(sub); // Prints &quot;Hello&quot;
+}
+</code></pre>
+<h2>The Problem with <code>const std::string&amp;</code></h2>
+<p>Before <code>std::string_view</code>, the standard way to pass a string to a function without making a copy was to pass it by <code>const std::string&amp;</code>. However, this still has a hidden cost. If you have a C-style string literal and you pass it to a function that takes a <code>const std::string&amp;</code>, a temporary <code>std::string</code> object has to be created.</p>
+<pre><code class="language-cpp">void print_str(const std::string&amp; s) {
+    std::cout &lt;&lt; s &lt;&lt; std::endl;
+}
+
+int main() {
+    print_str(&quot;Hello&quot;); // A temporary std::string is created here
+}
+</code></pre>
+<p>With <code>std::string_view</code>, you can avoid this allocation.</p>
+<pre><code class="language-cpp">void print_sv(std::string_view sv) {
+    std::cout &lt;&lt; sv &lt;&lt; std::endl;
+}
+
+int main() {
+    print_sv(&quot;Hello&quot;); // No allocation!
+}
+</code></pre>
+<p>For this reason, you should generally prefer to pass strings by <code>std::string_view</code> in your function parameters, unless you need to take ownership of the string.</p>
+<h2>The Dangers of <code>std::string_view</code></h2>
+<p>The biggest advantage of <code>std::string_view</code> is also its biggest danger: it doesn't own the data. A <code>std::string_view</code> is just a view into some other string. If the underlying string is destroyed, the <code>std::string_view</code> will be left dangling, and trying to use it will lead to undefined behavior.</p>
+<pre><code class="language-cpp">std::string_view get_dangling_sv() {
+    std::string s = &quot;This string will be destroyed&quot;;
+    return s; // The string_view will be dangling!
+}
+
+int main() {
+    std::string_view sv = get_dangling_sv();
+    // Using sv here is undefined behavior!
+}
+</code></pre>
+<p>You should be very careful not to return a <code>std::string_view</code> that refers to a local variable.</p>
+<h2>When to Use <code>std::string_view</code></h2>
+<ul>
+<li><strong>Function parameters:</strong> Use <code>std::string_view</code> for function parameters when you need a read-only view of a string. This is almost always better than <code>const std::string&amp;</code>.</li>
+<li><strong>Parsing strings:</strong> <code>std::string_view</code> is great for parsing strings, as you can create substrings and move the view around without having to make any copies.</li>
+<li><strong>Return values:</strong> Be very careful when returning a <code>std::string_view</code>. Only do it if you can guarantee that the underlying string will outlive the <code>std::string_view</code>.</li>
+</ul>
+<h2>Conclusion</h2>
+<p><code>std::string_view</code> is a powerful tool for writing more efficient C++ code. By providing a non-owning view of a string, it can help you to avoid unnecessary memory allocations and copies. However, with great power comes great responsibility. You need to be mindful of the lifetime of the underlying string to avoid dangling views.</p>
+<p><code>std::string_view</code> is a fantastic addition to the C++ standard library and a key part of modern C++ development. It's a hidden gem that can give you a significant performance boost in your string-heavy code. It's a simple change that can make your code faster and more efficient.</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/My-blog-App/js/main.js"></script>
+  </body>
+</html>

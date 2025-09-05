@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Halting Problem: A Limit of Computation | My Tech Blog</title>
+    <link rel="stylesheet" href="/My-blog-App/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/My-blog-App/" class="logo">My Tech Blog</a>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">The Halting Problem: A Limit of Computation</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2024-09-06">September 6, 2024</time></span>
+    </div>
+    
+      <img src="/assets/images/post-11-thumbnail.svg" alt="Thumbnail for The Halting Problem: A Limit of Computation" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>In the world of computer science, we often think of computers as being able to solve any problem, given enough time and resources. However, there are some problems that are provably unsolvable by any computer, no matter how powerful. The most famous of these is the Halting Problem.</p>
+<h2>What is the Halting Problem?</h2>
+<p>The Halting Problem asks the following question: given an arbitrary computer program and an input, will the program eventually halt (i.e., finish its execution), or will it run forever?</p>
+<p>In 1936, Alan Turing proved that it is impossible to create a general algorithm that can solve the Halting Problem for all possible program-input pairs.</p>
+<h2>The Proof by Contradiction</h2>
+<p>The proof of the unsolvability of the Halting Problem is a beautiful example of a proof by contradiction. It goes something like this:</p>
+<ol>
+<li>
+<p><strong>Assume a solution exists.</strong> Let's assume that we can create a function, let's call it <code>halts(program, input)</code>, that takes a program and an input as arguments and returns <code>true</code> if the program halts on that input, and <code>false</code> otherwise.</p>
+</li>
+<li>
+<p><strong>Construct a new program.</strong> Now, let's construct a new program, let's call it <code>paradox(program)</code>, that takes a program as an argument and does the following:</p>
+<ul>
+<li>It calls our <code>halts</code> function with the program as both the program and the input (<code>halts(program, program)</code>).</li>
+<li>If <code>halts</code> returns <code>true</code> (meaning the program would halt if given itself as input), then <code>paradox</code> enters an infinite loop.</li>
+<li>If <code>halts</code> returns <code>false</code> (meaning the program would run forever if given itself as input), then <code>paradox</code> halts.</li>
+</ul>
+</li>
+<li>
+<p><strong>The Contradiction.</strong> Now, what happens if we run our <code>paradox</code> program with itself as the input (<code>paradox(paradox)</code>)?</p>
+<ul>
+<li>If <code>paradox(paradox)</code> halts, then our <code>halts</code> function (<code>halts(paradox, paradox)</code>) must have returned <code>false</code>. But if <code>halts</code> returned <code>false</code>, then <code>paradox</code> should have halted, which is a contradiction.</li>
+<li>If <code>paradox(paradox)</code> runs forever, then our <code>halts</code> function (<code>halts(paradox, paradox)</code>) must have returned <code>true</code>. But if <code>halts</code> returned <code>true</code>, then <code>paradox</code> should have entered an infinite loop, which is also a contradiction.</li>
+</ul>
+</li>
+</ol>
+<p>Since we have arrived at a contradiction in both cases, our initial assumption that the <code>halts</code> function can exist must be false.</p>
+<h2>Why is the Halting Problem Important?</h2>
+<p>The Halting Problem is more than just a theoretical curiosity. It has profound implications for computer science and software engineering.</p>
+<ul>
+<li><strong>It sets a fundamental limit on computation.</strong> It tells us that there are some problems that we simply cannot solve with computers.</li>
+<li><strong>It has practical implications for software development.</strong> For example, it's impossible to write a program that can perfectly detect all infinite loops in another program. This is why compilers and static analysis tools can warn you about <em>potential</em> infinite loops, but they can't guarantee that they will find all of them.</li>
+<li><strong>It was a foundational result in the theory of computation.</strong> The work of Alan Turing and others on the Halting Problem helped to lay the foundations for the modern theory of computation and our understanding of what is and is not computable.</li>
+</ul>
+<p>The Halting Problem is a powerful reminder that even in the logical and deterministic world of computer science, there are fundamental limits to what we can achieve. It's a beautiful piece of theoretical computer science that has had a lasting impact on the field.</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/My-blog-App/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Hidden Gems: `if constexpr` | My Tech Blog</title>
+    <link rel="stylesheet" href="/My-blog-App/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/My-blog-App/" class="logo">My Tech Blog</a>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">C++ Hidden Gems: `if constexpr`</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2024-09-23">September 23, 2024</time></span>
+    </div>
+    
+      <img src="/assets/images/post-2-thumbnail.svg" alt="Thumbnail for C++ Hidden Gems: `if constexpr`" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>Template metaprogramming in C++ is a powerful technique, but it can also be complex and verbose. Before C++17, if you wanted to have conditional logic in your templates, you often had to resort to techniques like SFINAE (Substitution Failure Is Not An Error) or tag dispatching. These techniques are powerful, but they can be difficult to read and write.</p>
+<p>C++17 introduced a much simpler and more expressive way to write conditional logic in templates: <code>if constexpr</code>.</p>
+<h2>What is <code>if constexpr</code>?</h2>
+<p><code>if constexpr</code> is a compile-time <code>if</code> statement. The condition in an <code>if constexpr</code> statement must be a compile-time constant expression. The compiler evaluates the condition at compile time and discards the branch that is not taken. This means that the code in the discarded branch is not even compiled, so it doesn't need to be syntactically or semantically correct.</p>
+<h2>A Motivating Example</h2>
+<p>Let's say we want to write a generic <code>to_string</code> function that can handle different types.</p>
+<p>Here's how we might have done it before C++17, using function overloading:</p>
+<pre><code class="language-cpp">#include &lt;string&gt;
+#include &lt;iostream&gt;
+
+std::string to_string_impl(const std::string&amp; s) {
+    return s;
+}
+
+template &lt;typename T&gt;
+std::string to_string_impl(const T&amp; value) {
+    return std::to_string(value);
+}
+
+template &lt;typename T&gt;
+std::string my_to_string(const T&amp; value) {
+    return to_string_impl(value);
+}
+</code></pre>
+<p>This works, but it requires creating a set of overloaded helper functions.</p>
+<p>Here's how we can do it with <code>if constexpr</code>:</p>
+<pre><code class="language-cpp">#include &lt;string&gt;
+#include &lt;iostream&gt;
+#include &lt;type_traits&gt;
+
+template &lt;typename T&gt;
+std::string my_to_string(const T&amp; value) {
+    if constexpr (std::is_same_v&lt;T, std::string&gt;) {
+        return value;
+    } else {
+        return std::to_string(value);
+    }
+}
+</code></pre>
+<p>This is much more concise and readable. The <code>if constexpr</code> statement allows us to have a single function that can handle different types in different ways. The compiler will discard the <code>else</code> branch when <code>T</code> is a <code>std::string</code>, and it will discard the <code>if</code> branch for all other types.</p>
+<h2>Why Use <code>if constexpr</code>?</h2>
+<p><code>if constexpr</code> is a major simplification for template metaprogramming in C++.</p>
+<ul>
+<li><strong>Readability:</strong> It makes the intent of your code much clearer than SFINAE or tag dispatching.</li>
+<li><strong>Conciseness:</strong> It allows you to write less boilerplate code.</li>
+<li><strong>Power:</strong> It allows you to write generic code that can be customized for different types at compile time.</li>
+</ul>
+<p>It's particularly useful when you are working with <code>std::variant</code> and <code>std::visit</code>, or when you are writing any kind of generic library code.</p>
+<h2>The Power of Discarded Statements</h2>
+<p>The fact that the discarded branch is not compiled is a very powerful feature. It allows you to write code that would not be valid for all types.</p>
+<p>For example, let's say we want to write a generic function that can get the size of a container, but we also want it to work for integers (where &quot;size&quot; is just the value itself).</p>
+<pre><code class="language-cpp">template &lt;typename T&gt;
+auto get_size(const T&amp; t) {
+    if constexpr (std::is_integral_v&lt;T&gt;) {
+        return t;
+    } else {
+        return t.size();
+    }
+}
+</code></pre>
+<p>If we used a regular <code>if</code> statement here, this code would not compile for integers, because integers don't have a <code>.size()</code> method. But because we are using <code>if constexpr</code>, the <code>else</code> branch is discarded when <code>T</code> is an integer, so the code compiles just fine.</p>
+<h2>Conclusion</h2>
+<p><code>if constexpr</code> is a game-changing feature for template metaprogramming in C++. It makes it much easier to write clean, readable, and powerful generic code. If you are writing templates in C++17 or later, <code>if constexpr</code> should be one of the first tools you reach for. It's a hidden gem that takes a lot of the pain out of template metaprogramming and makes it accessible to a wider range of developers. It's a key part of the ongoing effort to make C++ a more expressive and developer-friendly language.</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/My-blog-App/js/main.js"></script>
+  </body>
+</html>

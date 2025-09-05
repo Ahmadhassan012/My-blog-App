@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Hidden Gems: The Ranges Library | My Tech Blog</title>
+    <link rel="stylesheet" href="/My-blog-App/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/My-blog-App/" class="logo">My Tech Blog</a>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">C++ Hidden Gems: The Ranges Library</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2024-09-25">September 25, 2024</time></span>
+    </div>
+    
+      <img src="/images/post-4-thumbnail.svg" alt="Thumbnail for C++ Hidden Gems: The Ranges Library" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>The C++ Standard Template Library (STL) provides a powerful set of algorithms for working with sequences of data. However, the traditional iterator-based design can sometimes be verbose and clunky. C++20 introduced a major new feature that revolutionizes how we work with sequences: the Ranges library.</p>
+<h2>What are Ranges?</h2>
+<p>A range is a concept that represents a sequence of elements. It's a more abstract and powerful idea than a pair of iterators. A range is simply anything that you can iterate over. This could be a container like <code>std::vector</code>, a <code>std::string_view</code>, or a custom type that you have defined.</p>
+<p>The Ranges library provides a new set of algorithms and views that operate on ranges instead of iterators.</p>
+<h2>The Power of Pipelining</h2>
+<p>One of the most exciting features of the Ranges library is the ability to compose operations using the pipe (<code>|</code>) operator. This allows you to create complex data processing pipelines in a clean and readable way.</p>
+<p>Let's say we have a vector of integers, and we want to get the squares of the even numbers.</p>
+<p>Here's how we might have done it before C++20:</p>
+<pre><code class="language-cpp">#include &lt;vector&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+
+int main() {
+    std::vector&lt;int&gt; numbers = {1, 2, 3, 4, 5, 6};
+    std::vector&lt;int&gt; even_numbers;
+
+    std::copy_if(numbers.begin(), numbers.end(), std::back_inserter(even_numbers),
+                 [](int n) { return n % 2 == 0; });
+
+    std::vector&lt;int&gt; squared_numbers;
+    std::transform(even_numbers.begin(), even_numbers.end(), std::back_inserter(squared_numbers),
+                   [](int n) { return n * n; });
+
+    for (int n : squared_numbers) {
+        std::cout &lt;&lt; n &lt;&lt; &quot; &quot;; // Prints 4 16 36
+    }
+}
+</code></pre>
+<p>This is quite verbose and requires creating intermediate vectors.</p>
+<p>Here's how we can do it with C++20 Ranges:</p>
+<pre><code class="language-cpp">#include &lt;vector&gt;
+#include &lt;iostream&gt;
+#include &lt;ranges&gt;
+
+int main() {
+    std::vector&lt;int&gt; numbers = {1, 2, 3, 4, 5, 6};
+
+    auto results = numbers
+                 | std::views::filter([](int n) { return n % 2 == 0; })
+                 | std::views::transform([](int n) { return n * n; });
+
+    for (int n : results) {
+        std::cout &lt;&lt; n &lt;&lt; &quot; &quot;; // Prints 4 16 36
+    }
+}
+</code></pre>
+<p>This is much more concise and readable. The <code>std::views</code> are lazy, which means that the computations are not performed until you iterate over the <code>results</code> range. This can be much more efficient, as it avoids the creation of intermediate containers.</p>
+<h2>Key Components of the Ranges Library</h2>
+<ul>
+<li><strong>Concepts:</strong> The Ranges library is built on top of C++20 Concepts, which allow for better error messages and more constrained templates.</li>
+<li><strong>Range Algorithms:</strong> The library provides a new set of algorithms that operate on ranges. For example, <code>std::ranges::sort</code> can sort any range, not just a container that provides random access iterators.</li>
+<li><strong>Views:</strong> Views are lightweight, non-owning, and composable adaptors that modify a range. They are the key to the pipelining syntax.</li>
+<li><strong>Projections:</strong> Many of the range algorithms take an optional &quot;projection,&quot; which is a function that is applied to the elements before the operation. This can simplify a lot of common tasks.</li>
+</ul>
+<h2>Why Use Ranges?</h2>
+<p>The Ranges library is a major step forward for C++.</p>
+<ul>
+<li><strong>Expressiveness:</strong> It allows you to write more declarative and readable code.</li>
+<li><strong>Composability:</strong> The pipelining syntax makes it easy to compose complex operations.</li>
+<li><strong>Efficiency:</strong> The lazy nature of views can lead to more efficient code by avoiding intermediate allocations.</li>
+<li><strong>Safety:</strong> The use of Concepts leads to better error messages and safer code.</li>
+</ul>
+<h2>Conclusion</h2>
+<p>The Ranges library is one of the most significant and exciting features of C++20. It provides a more modern, powerful, and expressive way to work with sequences of data. While it might take some time to get used to the new syntax and concepts, the benefits are well worth it.</p>
+<p>If you are working with C++20, I highly encourage you to explore the Ranges library. It's a hidden gem that will fundamentally change the way you write C++ code. It's a glimpse into the future of the language, a future that is more declarative, more expressive, and more powerful.</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/My-blog-App/js/main.js"></script>
+  </body>
+</html>

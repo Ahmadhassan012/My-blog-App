@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The P vs. NP Problem: A Million-Dollar Question | My Tech Blog</title>
+    <link rel="stylesheet" href="/My-blog-App/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/My-blog-App/" class="logo">My Tech Blog</a>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">The P vs. NP Problem: A Million-Dollar Question</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2024-09-13">September 13, 2024</time></span>
+    </div>
+    
+      <img src="/assets/images/post-5-thumbnail.svg" alt="Thumbnail for The P vs. NP Problem: A Million-Dollar Question" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>The P vs. NP problem is one of the seven Millennium Prize Problems, a set of mathematical problems for which the Clay Mathematics Institute has offered a $1,000,000 prize for the first correct solution. It is a deep and fundamental question about the nature of computation.</p>
+<h2>What is P?</h2>
+<p>P stands for &quot;polynomial time.&quot; The class P is the set of all decision problems that can be solved by a deterministic Turing machine in polynomial time.</p>
+<p>In simpler terms, a problem is in P if there is an algorithm that can solve it in a &quot;reasonable&quot; amount of time. &quot;Reasonable&quot; here means that the time it takes to solve the problem does not grow exponentially with the size of the input. Most of the problems we encounter in practice, like sorting a list or finding the shortest path in a graph, are in P.</p>
+<h2>What is NP?</h2>
+<p>NP stands for &quot;nondeterministic polynomial time.&quot; The class NP is the set of all decision problems for which a given solution can be <em>verified</em> in polynomial time by a deterministic Turing machine.</p>
+<p>In simpler terms, a problem is in NP if, given a potential solution, you can quickly check if it is correct.</p>
+<h3>The Traveling Salesman Problem: A Classic NP Problem</h3>
+<p>A classic example of a problem in NP is the Traveling Salesman Problem (TSP). The problem asks: given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city?</p>
+<ul>
+<li><strong>Finding the solution is hard:</strong> There is no known polynomial-time algorithm for finding the shortest route. For a large number of cities, the problem becomes computationally intractable.</li>
+<li><strong>Verifying a solution is easy:</strong> If someone gives you a proposed route, you can easily check two things in polynomial time:
+<ol>
+<li>Is the route a valid tour (does it visit every city exactly once)?</li>
+<li>Is the total length of the tour less than or equal to a given value?</li>
+</ol>
+</li>
+</ul>
+<p>Since we can quickly verify a solution, the Traveling Salesman Problem is in NP.</p>
+<h2>The P vs. NP Question</h2>
+<p>The P vs. NP problem asks whether these two classes are the same. In other words, if a solution to a problem can be verified quickly (i.e., the problem is in NP), can the solution also be <em>found</em> quickly (i.e., is the problem also in P)?</p>
+<ul>
+<li><strong>If P = NP:</strong> This would mean that for every problem for which we can quickly verify a solution, we can also quickly find a solution. This would have profound implications for mathematics, computer science, and many other fields. It would mean that many of the hard problems we face today, like cracking modern encryption, could be solved efficiently.</li>
+<li><strong>If P ≠ NP:</strong> This is what most computer scientists believe to be the case. It would mean that there are problems for which we can quickly verify a solution, but for which there is no efficient algorithm for finding a solution. This would confirm our current understanding of computational complexity and the limits of computation.</li>
+</ul>
+<h2>Why is P vs. NP Important?</h2>
+<p>The P vs. NP problem is not just a theoretical puzzle. The answer has far-reaching practical consequences.</p>
+<ul>
+<li><strong>Cryptography:</strong> Most modern cryptography is based on the assumption that certain problems are hard to solve (i.e., not in P). If P = NP, then these cryptographic systems could be broken.</li>
+<li><strong>Optimization:</strong> Many important optimization problems in fields like logistics, finance, and biology are NP-hard. If P = NP, we could find optimal solutions to these problems efficiently, leading to huge economic and scientific breakthroughs.</li>
+<li><strong>Artificial Intelligence:</strong> A proof that P = NP could lead to a revolution in AI, as it would make it possible to solve many of the hard search and learning problems that are at the heart of AI.</li>
+</ul>
+<h2>Conclusion</h2>
+<p>The P vs. NP problem is one of the deepest and most important questions in all of science. It's a question about the fundamental nature of problem-solving and the limits of what we can compute. While most experts believe that P ≠ NP, a proof has remained elusive for over 50 years. The person who finally solves this problem will not only win a million dollars, but they will also change our understanding of the world. It's a testament to the enduring power of fundamental questions in science.</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/My-blog-App/js/main.js"></script>
+  </body>
+</html>

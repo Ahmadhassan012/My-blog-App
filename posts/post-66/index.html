@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Hidden Gems: Structured Bindings | My Tech Blog</title>
+    <link rel="stylesheet" href="/My-blog-App/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/My-blog-App/" class="logo">My Tech Blog</a>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">C++ Hidden Gems: Structured Bindings</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2024-09-22">September 22, 2024</time></span>
+    </div>
+    
+      <img src="/assets/images/post-1-thumbnail.svg" alt="Thumbnail for C++ Hidden Gems: Structured Bindings" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>C++17 introduced a number of features that are designed to make the language more convenient and expressive. One of the most useful of these is <strong>structured bindings</strong>. Structured bindings allow you to declare multiple variables that are initialized from the members of an object.</p>
+<h2>The Old Way</h2>
+<p>Before structured bindings, if you wanted to get the members of a struct or a pair, you would have to access them one by one.</p>
+<pre><code class="language-cpp">#include &lt;map&gt;
+#include &lt;string&gt;
+#include &lt;iostream&gt;
+
+int main() {
+    std::map&lt;std::string, int&gt; scores;
+    scores[&quot;Jules&quot;] = 100;
+    scores[&quot;Vincent&quot;] = 95;
+
+    for (const auto&amp; pair : scores) {
+        const std::string&amp; name = pair.first;
+        int score = pair.second;
+        std::cout &lt;&lt; name &lt;&lt; &quot;: &quot; &lt;&lt; score &lt;&lt; std::endl;
+    }
+}
+</code></pre>
+<p>This is a bit verbose, especially when you are iterating over a map.</p>
+<h2>The New Way with Structured Bindings</h2>
+<p>With structured bindings, you can decompose the pair directly into its constituent parts.</p>
+<pre><code class="language-cpp">#include &lt;map&gt;
+#include &lt;string&gt;
+#include &lt;iostream&gt;
+
+int main() {
+    std::map&lt;std::string, int&gt; scores;
+    scores[&quot;Jules&quot;] = 100;
+    scores[&quot;Vincent&quot;] = 95;
+
+    for (const auto&amp; [name, score] : scores) {
+        std::cout &lt;&lt; name &lt;&lt; &quot;: &quot; &lt;&lt; score &lt;&lt; std::endl;
+    }
+}
+</code></pre>
+<p>This is much more concise and readable. The <code>[name, score]</code> syntax declares two new variables, <code>name</code> and <code>score</code>, and initializes them from the <code>first</code> and <code>second</code> members of the pair.</p>
+<h2>What Can You Decompose?</h2>
+<p>Structured bindings can be used to decompose a variety of types:</p>
+<ul>
+<li><strong>Structs and classes:</strong> You can decompose any struct or class that has only public, non-static data members.</li>
+<li><strong>C-style arrays:</strong> You can decompose a C-style array into its elements.</li>
+<li><strong>Tuples and pairs:</strong> You can decompose <code>std::tuple</code> and <code>std::pair</code> objects.</li>
+</ul>
+<p>Here's an example with a struct:</p>
+<pre><code class="language-cpp">struct Person {
+    std::string name;
+    int age;
+};
+
+int main() {
+    Person p = {&quot;Jules&quot;, 30};
+    auto [name, age] = p;
+    std::cout &lt;&lt; name &lt;&lt; &quot; is &quot; &lt;&lt; age &lt;&lt; &quot; years old.&quot; &lt;&lt; std::endl;
+}
+</code></pre>
+<h2>Why Use Structured Bindings?</h2>
+<p>Structured bindings are a relatively small feature, but they can have a big impact on the readability and expressiveness of your code.</p>
+<ul>
+<li><strong>Conciseness:</strong> They allow you to write less boilerplate code.</li>
+<li><strong>Readability:</strong> They can make your code more self-documenting. The names of the variables in the structured binding can describe the meaning of the values.</li>
+<li><strong>Convenience:</strong> They are particularly useful when working with maps, tuples, and other types that have a fixed structure.</li>
+</ul>
+<h2>Conclusion</h2>
+<p>Structured bindings are a fantastic &quot;quality of life&quot; improvement in C++17. They are a simple feature, but they can make your code cleaner, more concise, and more readable. If you're not already using them, I highly recommend giving them a try. They are a great example of how modern C++ is evolving to be a more expressive and developer-friendly language. It's a hidden gem that you'll find yourself using all the time. It's a small change that makes a big difference.</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/My-blog-App/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The DRY Principle: Don&#39;t Repeat Yourself | My Tech Blog</title>
+    <link rel="stylesheet" href="/My-blog-App/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/My-blog-App/" class="logo">My Tech Blog</a>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">The DRY Principle: Don&#39;t Repeat Yourself</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2024-09-02">September 2, 2024</time></span>
+    </div>
+    
+      <img src="/assets/images/post-7-thumbnail.svg" alt="Thumbnail for The DRY Principle: Don&#39;t Repeat Yourself" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>&quot;Don't Repeat Yourself&quot; (DRY) is a principle of software development aimed at reducing repetition of software patterns, replacing it with abstractions or using data normalization to avoid redundancy. The DRY principle is stated as &quot;Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.&quot;</p>
+<h2>What is &quot;Knowledge&quot;?</h2>
+<p>In this context, &quot;knowledge&quot; refers to any piece of information or logic in your system. This could be:</p>
+<ul>
+<li>A business rule</li>
+<li>An algorithm</li>
+<li>A configuration value</li>
+<li>A piece of documentation</li>
+</ul>
+<p>When the DRY principle is applied well, a modification of any single element of a system does not require a change in other logically unrelated elements. Additionally, logically related elements all change predictably and uniformly, and are thus kept in sync.</p>
+<h2>Why is DRY Important?</h2>
+<p>Violating the DRY principle is often referred to as being &quot;WET&quot; (Write Everything Twice, or We Enjoy Typing). When you have duplicated code or knowledge in your system, it leads to several problems:</p>
+<ul>
+<li><strong>Increased Maintenance Overhead:</strong> If you need to change a piece of logic, you have to find and change it in every place it is duplicated. This is time-consuming and error-prone. It's easy to miss one of the copies, leading to inconsistencies and bugs.</li>
+<li><strong>Reduced Readability:</strong> Duplicated code can make your codebase larger and more difficult to understand. It's harder to see the big picture when you have to wade through a lot of repetitive code.</li>
+<li><strong>Inconsistent Logic:</strong> When you have multiple copies of the same logic, it's easy for them to get out of sync. This can lead to subtle and hard-to-find bugs.</li>
+</ul>
+<h2>How to Apply the DRY Principle</h2>
+<p>The key to applying the DRY principle is to identify and eliminate duplication. Here are a few common ways to do this:</p>
+<h3>1. Use Functions and Methods</h3>
+<p>If you have a block of code that is repeated in multiple places, you should extract it into a function or method. This is the most common and straightforward way to apply the DRY principle.</p>
+<h3>2. Use Classes and Objects</h3>
+<p>Object-oriented programming provides a powerful set of tools for avoiding duplication. By encapsulating data and behavior into classes, you can create reusable components that can be used throughout your application.</p>
+<h3>3. Use Configuration Files</h3>
+<p>Don't hardcode values like database connection strings or API keys in your code. Instead, store them in a configuration file. This allows you to change these values without having to modify the code.</p>
+<h3>4. Use a Single Source of Truth</h3>
+<p>For any piece of knowledge in your system, there should be a single, authoritative source. For example, instead of having the same business rule implemented in multiple services, you could have a dedicated service that is the single source of truth for that rule.</p>
+<h2>The Danger of Over-Drying</h2>
+<p>While the DRY principle is a valuable guideline, it's possible to take it too far. Sometimes, a little bit of duplication is better than a complex or inappropriate abstraction. The principle of &quot;AHA&quot; (Avoid Hasty Abstractions) suggests that you should not rush to create an abstraction until you have a clear understanding of the pattern you are trying to abstract.</p>
+<h2>Conclusion</h2>
+<p>The DRY principle is a fundamental concept that can help you write cleaner, more maintainable, and less buggy code. By striving to have a single, unambiguous representation of every piece of knowledge in your system, you can reduce complexity and make your software easier to change and reason about. It's a key principle for any developer who wants to write professional, high-quality code.</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/My-blog-App/js/main.js"></script>
+  </body>
+</html>

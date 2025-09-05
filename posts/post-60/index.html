@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The SOLID Principles in Practice | My Tech Blog</title>
+    <link rel="stylesheet" href="/My-blog-App/css/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/My-blog-App/" class="logo">My Tech Blog</a>
+        <div class="nav-wrapper">
+          <nav class="nav">
+            <a href="/My-blog-App/">Home</a>
+            <a href="/My-blog-App/blog/">Blog</a>
+            <a href="/My-blog-App/about/">About</a>
+            <a href="/My-blog-App/contact/">Contact</a>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">The SOLID Principles in Practice</h1>
+    <div class="post-meta">
+      <span>By Jules</span>
+      <img src="/assets/images/author-jules.svg" alt="Photo of Jules" class="author-image">
+      <span> on <time datetime="2024-09-16">September 16, 2024</time></span>
+    </div>
+    
+      <img src="/assets/images/post-8-thumbnail.svg" alt="Thumbnail for The SOLID Principles in Practice" class="post-thumbnail">
+    
+  </header>
+
+  <div class="post-content">
+    <p>The SOLID principles are a set of five design principles for object-oriented programming that are intended to make software designs more understandable, flexible, and maintainable. But how do these theoretical principles translate into practice? Let's take a look at each of the principles with some simple code examples.</p>
+<h2>1. Single Responsibility Principle (SRP)</h2>
+<p><em>A class should have only one reason to change.</em></p>
+<p><strong>Violation:</strong></p>
+<pre><code class="language-python">class User:
+    def __init__(self, name):
+        self.name = name
+
+    def get_name(self):
+        return self.name
+
+    def save_to_database(self):
+        # Code to save the user to the database
+        pass
+
+    def generate_report(self):
+        # Code to generate a report for the user
+        pass
+</code></pre>
+<p>The <code>User</code> class has two reasons to change: if the user's properties change, or if the way reports are generated changes.</p>
+<p><strong>Solution:</strong></p>
+<pre><code class="language-python">class User:
+    def __init__(self, name):
+        self.name = name
+
+    def get_name(self):
+        return self.name
+
+class UserRepository:
+    def save(self, user):
+        # Code to save the user to the database
+        pass
+
+class ReportGenerator:
+    def generate(self, user):
+        # Code to generate a report for the user
+        pass
+</code></pre>
+<p>Now, each class has a single responsibility.</p>
+<h2>2. Open/Closed Principle (OCP)</h2>
+<p><em>Software entities should be open for extension, but closed for modification.</em></p>
+<p><strong>Violation:</strong></p>
+<pre><code class="language-python">class Discount:
+    def __init__(self, customer, price):
+        self.customer = customer
+        self.price = price
+
+    def give_discount(self):
+        if self.customer == 'favored':
+            return self.price * 0.2
+        if self.customer == 'vip':
+            return self.price * 0.4
+</code></pre>
+<p>If we want to add a new type of discount, we have to modify this class.</p>
+<p><strong>Solution:</strong></p>
+<pre><code class="language-python">class Discount:
+    def get_discount(self):
+        return 0
+
+class FavoredDiscount(Discount):
+    def get_discount(self):
+        return 0.2
+
+class VIPDiscount(Discount):
+    def get_discount(self):
+        return 0.4
+
+class DiscountCalculator:
+    def calculate(self, price, discount_type):
+        return price * discount_type.get_discount()
+</code></pre>
+<p>Now, we can add new discount types by creating new subclasses of <code>Discount</code>, without modifying the existing code.</p>
+<h2>3. Liskov Substitution Principle (LSP)</h2>
+<p><em>Subtypes must be substitutable for their base types.</em></p>
+<p><strong>Violation:</strong></p>
+<pre><code class="language-python">class Bird:
+    def fly(self):
+        pass
+
+class Penguin(Bird):
+    def fly(self):
+        raise Exception(&quot;Penguins can't fly!&quot;)
+</code></pre>
+<p>If we have a function that takes a <code>Bird</code> object and calls <code>fly()</code>, it will break if we pass it a <code>Penguin</code> object.</p>
+<p><strong>Solution:</strong></p>
+<pre><code class="language-python">class Bird:
+    pass
+
+class FlyingBird(Bird):
+    def fly(self):
+        pass
+
+class Penguin(Bird):
+    # No fly method
+    pass
+</code></pre>
+<p>Now, a <code>Penguin</code> is not a <code>FlyingBird</code>, so it can't be substituted where a <code>FlyingBird</code> is expected.</p>
+<h2>4. Interface Segregation Principle (ISP)</h2>
+<p><em>Clients should not be forced to depend on interfaces they do not use.</em></p>
+<p><strong>Violation:</strong></p>
+<pre><code class="language-python">from abc import ABC, abstractmethod
+
+class Worker(ABC):
+    @abstractmethod
+    def work(self):
+        pass
+
+    @abstractmethod
+    def eat(self):
+        pass
+
+class Human(Worker):
+    def work(self):
+        print(&quot;Human working&quot;)
+    def eat(self):
+        print(&quot;Human eating&quot;)
+
+class Robot(Worker):
+    def work(self):
+        print(&quot;Robot working&quot;)
+    def eat(self):
+        # Robots don't eat!
+        pass
+</code></pre>
+<p>The <code>Robot</code> class is forced to implement the <code>eat</code> method, even though it doesn't need it.</p>
+<p><strong>Solution:</strong></p>
+<pre><code class="language-python">from abc import ABC, abstractmethod
+
+class Workable(ABC):
+    @abstractmethod
+    def work(self):
+        pass
+
+class Eatable(ABC):
+    @abstractmethod
+    def eat(self):
+        pass
+
+class Human(Workable, Eatable):
+    def work(self):
+        print(&quot;Human working&quot;)
+    def eat(self):
+        print(&quot;Human eating&quot;)
+
+class Robot(Workable):
+    def work(self):
+        print(&quot;Robot working&quot;)
+</code></pre>
+<p>Now, we have smaller, more specific interfaces, and clients only need to depend on the interfaces they actually use.</p>
+<h2>5. Dependency Inversion Principle (DIP)</h2>
+<p><em>High-level modules should not depend on low-level modules. Both should depend on abstractions.</em></p>
+<p><strong>Violation:</strong></p>
+<pre><code class="language-python">class LightBulb:
+    def turn_on(self):
+        print(&quot;LightBulb on&quot;)
+    def turn_off(self):
+        print(&quot;LightBulb off&quot;)
+
+class Switch:
+    def __init__(self):
+        self.bulb = LightBulb()
+        self.on = False
+
+    def flip(self):
+        if self.on:
+            self.bulb.turn_off()
+            self.on = False
+        else:
+            self.bulb.turn_on()
+            self.on = True
+</code></pre>
+<p>The <code>Switch</code> class directly depends on the <code>LightBulb</code> class.</p>
+<p><strong>Solution:</strong></p>
+<pre><code class="language-python">from abc import ABC, abstractmethod
+
+class Switchable(ABC):
+    @abstractmethod
+    def turn_on(self):
+        pass
+    @abstractmethod
+    def turn_off(self):
+        pass
+
+class LightBulb(Switchable):
+    def turn_on(self):
+        print(&quot;LightBulb on&quot;)
+    def turn_off(self):
+        print(&quot;LightBulb off&quot;)
+
+class Switch:
+    def __init__(self, device: Switchable):
+        self.device = device
+        self.on = False
+
+    def flip(self):
+        if self.on:
+            self.device.turn_off()
+            self.on = False
+        else:
+            self.device.turn_on()
+            self.on = True
+</code></pre>
+<p>Now, the <code>Switch</code> class depends on the <code>Switchable</code> abstraction, not the concrete <code>LightBulb</code> class. This allows us to use the <code>Switch</code> with any device that implements the <code>Switchable</code> interface.</p>
+<h2>Conclusion</h2>
+<p>The SOLID principles are not hard and fast rules, but they are powerful guidelines that can help you to write code that is more maintainable, flexible, and robust. By understanding and applying these principles, you can improve the quality of your software designs and become a more effective object-oriented programmer. It's a key part of writing clean, professional code.</p>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/My-blog-App/js/main.js"></script>
+  </body>
+</html>
