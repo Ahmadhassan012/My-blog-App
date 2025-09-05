@@ -28,3 +28,24 @@ themeToggle.addEventListener('click', () => {
   setTheme(newTheme);
   localStorage.setItem('theme', newTheme);
 });
+
+// Parallax effect for hero section
+const hero = document.querySelector('.hero');
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.pageYOffset;
+  hero.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+});
+
+// Scroll animations
+const scrollObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      scrollObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in-section').forEach(section => {
+  scrollObserver.observe(section);
+});
