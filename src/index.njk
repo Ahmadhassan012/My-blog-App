@@ -38,15 +38,6 @@ title: Home
     </ul>
   </div>
 
-  <div class="categories-section fade-in-section">
-    <h2>Browse by Category</h2>
-    <ul class="tags-list">
-      {% for tag in collections.tagsList %}
-        <li><a href="/tags/{{ tag | slug }}/" class="tag">{{ tag }}</a></li>
-      {% endfor %}
-    </ul>
-  </div>
-
   <div class="all-posts-link">
       <a href="{{ '/blog/' | url }}" class="button">View All Posts</a>
   </div>

@@ -38,6 +38,24 @@ module.exports = function(eleventyConfig) {
     return [...tagsSet].sort();
   });
 
+  eleventyConfig.addCollection("topTags", function(collectionApi) {
+    const tagsCount = {};
+    collectionApi.getAll().forEach(item => {
+      if (item.data.tags) {
+        item.data.tags.forEach(tag => {
+          if (tagsCount[tag]) {
+            tagsCount[tag]++;
+          } else {
+            tagsCount[tag] = 1;
+          }
+        });
+      }
+    });
+
+    const sortedTags = Object.entries(tagsCount).sort((a, b) => b[1] - a[1]);
+    return sortedTags.slice(0, 5).map(tag => tag[0]);
+  });
+
   eleventyConfig.addFilter("slug", (input) => {
     const options = {
       replacement: "-",
