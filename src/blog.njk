@@ -10,6 +10,15 @@ pagination:
 
 <h1>Latest Posts</h1>
 
+<div class="categories-section">
+  <h2>Top Categories</h2>
+  <ul class="tags-list">
+    {% for tag in collections.topTags %}
+      <li><a href="/tags/{{ tag | slug }}/" class="tag">{{ tag }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+
 <ul class="post-list">
   {% for post in posts %}
     <li class="post-list-item">
