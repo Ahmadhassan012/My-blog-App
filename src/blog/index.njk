@@ -1,0 +1,75 @@
+---
+layout: layouts/base.njk
+title: Blog
+pagination:
+  data: collections.posts
+  size: 6
+  alias: posts
+  reverse: true
+---
+
+<div class="blog-container">
+
+  {# Featured Post Section #}
+  {% if collections.featuredPosts.length > 0 %}
+    {% set featuredPost = collections.featuredPosts[0] %}
+    <section class="featured-post">
+      <div class="featured-post-thumbnail">
+        <a href="{{ featuredPost.url | url }}">
+          <img src="{{ featuredPost.data.thumbnail }}" alt="Thumbnail for {{ featuredPost.data.title }}">
+        </a>
+      </div>
+      <div class="featured-post-content">
+        <h2><a href="{{ featuredPost.url | url }}">{{ featuredPost.data.title }}</a></h2>
+        <p class="post-meta">
+          <time datetime="{{ featuredPost.date | htmlDateString }}">{{ featuredPost.date | readableDate }}</time>
+        </p>
+        <p>{{ featuredPost.data.description }}</p>
+        <a href="{{ featuredPost.url | url }}" class="read-more">Read More</a>
+      </div>
+    </section>
+  {% endif %}
+
+  <div class="blog-main-content">
+    <main class="post-grid">
+      {% for post in posts %}
+        <article class="post-card">
+          <a href="{{ post.url | url }}" class="post-card-thumbnail-link">
+            <img src="{{ post.data.thumbnail }}" alt="Thumbnail for {{ post.data.title }}" class="post-card-thumbnail">
+          </a>
+          <div class="post-card-content">
+            <h3 class="post-card-title">
+              <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+            </h3>
+            <p class="post-card-meta">
+              <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+            </p>
+            <p class="post-card-excerpt">{{ post.data.description }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Tags</h3>
+        <ul class="tag-list">
+          {% for tag in collections.tagsList %}
+            <li>
+              <a href="/tags/{{ tag | slug }}/">
+                {{ tag }} ({{ collections.postsByTag[tag].length }})
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <nav class="pagination">
+    <a href="{{ pagination.previousPageHref | url }}" class="pagination-link" {% if not pagination.previousPageHref %}disabled{% endif %}>Previous</a>
+    <span class="pagination-page">Page {{ pagination.pageNumber + 1 }} of {{ pagination.hrefs.length }}</span>
+    <a href="{{ pagination.nextPageHref | url }}" class="pagination-link" {% if not pagination.nextPageHref %}disabled{% endif %}>Next</a>
+  </nav>
+
+</div>

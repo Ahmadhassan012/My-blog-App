@@ -1,0 +1,30 @@
+---
+pagination:
+  data: collections.tagsList
+  size: 1
+  alias: tag
+permalink: "/tags/{{ tag | slug }}/"
+layout: layouts/base.njk
+---
+<div class="blog-container">
+  <h1 class="tag-page-title">Posts tagged “{{ tag }}”</h1>
+
+  <div class="post-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));">
+    {% for post in collections.postsByTag[tag] %}
+      <article class="post-card">
+        <a href="{{ post.url | url }}" class="post-card-thumbnail-link">
+          <img src="{{ post.data.thumbnail }}" alt="Thumbnail for {{ post.data.title }}" class="post-card-thumbnail">
+        </a>
+        <div class="post-card-content">
+          <h3 class="post-card-title">
+            <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+          </h3>
+          <p class="post-card-meta">
+            <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+          </p>
+          <p class="post-card-excerpt">{{ post.data.description }}</p>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</div>

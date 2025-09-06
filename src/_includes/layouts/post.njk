@@ -1,0 +1,56 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="post-container">
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">{{ title }}</h1>
+      <div class="post-meta">
+        <img src="{{ author_image }}" alt="Photo of {{ author_name }}" class="author-image">
+        <span>By {{ author_name }} on <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time></span>
+      </div>
+      {% if tags %}
+        <div class="post-tags">
+          {% for tag in tags %}
+            <a href="/tags/{{ tag | slug }}/" class="tag">{{ tag }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </header>
+
+    {% if thumbnail %}
+      <img src="{{ thumbnail }}" alt="Thumbnail for {{ title }}" class="post-full-thumbnail">
+    {% endif %}
+
+    <div class="post-content">
+      {{ content | safe }}
+    </div>
+  </article>
+
+  {# Related Posts Section #}
+  {% set finalRelatedPosts = collections.posts | getRelatedPosts(page.url, collections.postsByTag) %}
+
+  {% if finalRelatedPosts.length > 0 %}
+    <aside class="related-posts">
+      <h3>Related Posts</h3>
+      <div class="post-grid">
+        {% for post in finalRelatedPosts %}
+          <article class="post-card">
+            <a href="{{ post.url | url }}" class="post-card-thumbnail-link">
+              <img src="{{ post.data.thumbnail }}" alt="Thumbnail for {{ post.data.title }}" class="post-card-thumbnail">
+            </a>
+            <div class="post-card-content">
+              <h3 class="post-card-title">
+                <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+              </h3>
+              <p class="post-card-meta">
+                <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+              </p>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </aside>
+  {% endif %}
+</div>
