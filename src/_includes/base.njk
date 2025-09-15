@@ -3,36 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} | My Tech Blog</title>
+    <title>{{ title }} | GitHub Blog Clone</title>
     <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
-    <link rel="stylesheet" href="{{ '/css/custom.css' | url }}">
   </head>
   <body>
     <header class="header">
       <div class="container">
-        <a href="{{ '/' | url }}" class="logo">My Tech Blog</a>
-        <div class="nav-wrapper">
-          <nav class="nav" aria-label="Main navigation">
-            <a href="{{ '/' | url }}">Home</a>
-            <a href="{{ '/blog/' | url }}">Blog</a>
-            <a href="{{ '/changelog/' | url }}">Changelog</a>
-            <div class="dropdown">
-              <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false" aria-controls="categories-dropdown">Categories</button>
-              <div class="dropdown-content" id="categories-dropdown">
-                {% for tag in collections.tagsList %}
-                  <a href="/tags/{{ tag | slug }}/">{{ tag }}</a>
-                {% endfor %}
-              </div>
-            </div>
-            <a href="{{ '/about/' | url }}">About</a>
-            <a href="{{ '/contact/' | url }}">Contact</a>
-          </nav>
-          <form action="/search" method="get" class="search-form">
-            <input type="search" name="q" placeholder="Search..." aria-label="Search">
-            <button type="submit">Search</button>
-          </form>
-          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
-        </div>
+        <a href="{{ '/' | url }}" class="logo">GitHub Blog</a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="{{ '/tags/ai/' | url }}">AI & ML</a>
+          <a href="{{ '/tags/development/' | url }}">Developer skills</a>
+          <a href="{{ '/tags/engineering/' | url }}">Engineering</a>
+          <a href="{{ '/tags/enterprise/' | url }}">Enterprise software</a>
+          <a href="{{ '/tags/news/' | url }}">News & insights</a>
+          <a href="{{ '/tags/open-source/' | url }}">Open Source</a>
+          <a href="{{ '/tags/security/' | url }}">Security</a>
+        </nav>
       </div>
     </header>
 
@@ -45,24 +31,58 @@
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
-          <div class="newsletter-signup">
-            <h3>Subscribe to our Newsletter</h3>
-            <p>Get the latest tech news and articles delivered to your inbox.</p>
-            <form class="newsletter-form">
-              <input type="email" placeholder="Enter your email" required>
-              <button type="submit" class="button">Subscribe</button>
-            </form>
-          </div>
-          <div class="footer-links">
-            <a href="{{ '/' | url }}">Home</a>
-            <a href="{{ '/blog/' | url }}">Blog</a>
-            <a href="{{ '/about/' | url }}">About</a>
-            <a href="{{ '/contact/' | url }}">Contact</a>
-            <a href="{{ '/privacy/' | url }}">Privacy Policy</a>
-            <a href="{{ '/terms/' | url }}">Terms of Service</a>
-          </div>
+            <div class="footer-section">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="{{ '/tags/security/' | url }}">Security</a></li>
+                    <li><a href="#">Enterprise</a></li>
+                    <li><a href="#">Customer Stories</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="{{ '/tags/api/' | url }}">Developer API</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Atom</a></li>
+                    <li><a href="#">Electron</a></li>
+                    <li><a href="#">GitHub Desktop</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Docs</a></li>
+                    <li><a href="#">Community Forum</a></li>
+                    <li><a href="#">Training</a></li>
+                    <li><a href="#">Status</a></li>
+                    <li><a href="{{ '/contact/' | url }}">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="{{ '/about/' | url }}">About</a></li>
+                    <li><a href="{{ '/blog/' | url }}">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Shop</a></li>
+                </ul>
+            </div>
         </div>
-        <p class="copyright">&copy; 2024 My Tech Blog. All rights reserved.</p>
+        <div class="footer-bottom">
+            <p class="copyright">&copy; 2025 GitHub, Inc. All rights reserved.</p>
+            <div class="footer-social-links">
+                <a href="#">X</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">YouTube</a>
+                <a href="#">Twitch</a>
+                <a href="#">TikTok</a>
+            </div>
+        </div>
       </div>
     </footer>
     <script src="{{ '/js/main.js' | url }}"></script>
