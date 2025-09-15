@@ -15,7 +15,7 @@ layout: base.njk
       <li class="post-list-item">
         {% if post.data.thumbnail %}
           <a href="{{ post.url | url }}">
-            <img src="{{ post.data.thumbnail }}" alt="Thumbnail for {{ post.data.title }}" class="post-thumbnail">
+            <img src="{{ post.data.thumbnail }}" alt="Thumbnail for {{ post.data.title }}" class="post-thumbnail" loading="lazy">
           </a>
         {% endif %}
         <div class="post-list-item-content">
