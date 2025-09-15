@@ -7,11 +7,11 @@ layout: base.njk
     <h1 class="post-title">{{ title }}</h1>
     <div class="post-meta">
       <span>By {{ author_name }}</span>
-      <img src="{{ author_image }}" alt="Photo of {{ author_name }}" class="author-image">
+      <img src="{{ author_image }}" alt="Photo of {{ author_name }}" class="author-image" loading="lazy">
       <span> on <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time></span>
     </div>
     {% if thumbnail %}
-      <img src="{{ thumbnail }}" alt="Thumbnail for {{ title }}" class="post-thumbnail">
+      <img src="{{ thumbnail }}" alt="Thumbnail for {{ title }}" class="post-thumbnail" loading="lazy">
     {% endif %}
   </header>
 
