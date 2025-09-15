@@ -2,20 +2,21 @@
 layout: base.njk
 ---
 
-<article class="post">
-  <header class="post-header">
-    <h1 class="post-title">{{ title }}</h1>
-    <div class="post-meta">
-      <span>By {{ author_name }}</span>
-      <img src="{{ author_image }}" alt="Photo of {{ author_name }}" class="author-image" loading="lazy">
-      <span> on <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time></span>
-    </div>
-    {% if thumbnail %}
-      <img src="{{ thumbnail }}" alt="Thumbnail for {{ title }}" class="post-thumbnail" loading="lazy">
-    {% endif %}
+<article class="post-full">
+  <header class="post-full-header">
+    <h1 class="post-full-title">{{ title }}</h1>
+    <p class="post-full-meta">
+        By {{ author_name }} on <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+    </p>
   </header>
 
-  <div class="post-content">
+  {% if thumbnail %}
+  <figure class="post-full-image">
+    <img src="{{ thumbnail }}" alt="{{ title }}" />
+  </figure>
+  {% endif %}
+
+  <section class="post-full-content">
     {{ content | safe }}
-  </div>
+  </section>
 </article>

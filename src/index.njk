@@ -3,37 +3,28 @@ layout: base.njk
 title: Home
 ---
 
-
 <div class="home-content">
-  <div class="featured-posts fade-in-section">
-    <h2>Featured Posts</h2>
-    <ul class="post-list">
-      {% for post in collections.featuredPosts %}
-        <li class="post-list-item">
-          {% if post.data.thumbnail %}
-            <a href="{{ post.url | url }}">
-              <img src="{{ post.data.thumbnail }}" alt="Thumbnail for {{ post.data.title }}" class="post-thumbnail" loading="lazy">
-            </a>
-          {% endif %}
-          <div class="post-list-item-content">
-            <h3 class="post-title">
-              <a href="{{ post.url | url }}">{{ post.data.title }}</a>
-            </h3>
-            <p class="post-meta">
-              <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-            </p>
-            <p class="post-excerpt">
-              {{ post.data.description }}
-            </p>
-            <a href="{{ post.url | url }}" class="read-more">Read More</a>
+  <div class="post-grid">
+    {% for post in collections.posts | reverse %}
+      <div class="card">
+        <div class="card-image">
+          <a href="{{ post.url | url }}">
+            <img src="{{ post.data.thumbnail }}" alt="Thumbnail for {{ post.data.title }}">
+          </a>
+        </div>
+        <div class="card-content">
+          <p class="card-category">{{ post.data.tags[0] }}</p>
+          <h2 class="card-title">
+            <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+          </h2>
+          <p class="card-excerpt">{{ post.data.description }}</p>
+          <div class="card-meta">
+            <img src="{{ post.data.author_image }}" alt="Author image for {{ post.data.author_name }}" class="author-image">
+            <span>{{ post.data.author_name }}</span>
+            <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
           </div>
-        </li>
-      {% endfor %}
-    </ul>
+        </div>
+      </div>
+    {% endfor %}
   </div>
-
-  <div class="all-posts-link">
-      <a href="{{ '/blog/' | url }}" class="button">View All Posts</a>
-  </div>
-
 </div>
