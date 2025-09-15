@@ -12,27 +12,28 @@
       <div class="container">
         <a href="{{ '/' | url }}" class="logo">My Tech Blog</a>
         <div class="nav-wrapper">
-          <nav class="nav" aria-label="Main navigation">
-            <a href="{{ '/' | url }}">Home</a>
-            <a href="{{ '/blog/' | url }}">Blog</a>
+          <nav class="nav">
             <a href="{{ '/changelog/' | url }}">Changelog</a>
-            <div class="dropdown">
-              <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false" aria-controls="categories-dropdown">Categories</button>
-              <div class="dropdown-content" id="categories-dropdown">
-                {% for tag in collections.tagsList %}
-                  <a href="/tags/{{ tag | slug }}/">{{ tag }}</a>
-                {% endfor %}
-              </div>
-            </div>
-            <a href="{{ '/about/' | url }}">About</a>
-            <a href="{{ '/contact/' | url }}">Contact</a>
+            <a href="https://docs.github.com/">Docs</a>
+            <a href="https://github.com/customer-stories">Customer stories</a>
           </nav>
-          <form action="/search" method="get" class="search-form">
-            <input type="search" name="q" placeholder="Search..." aria-label="Search">
-            <button type="submit">Search</button>
-          </form>
+          <div class="header-buttons">
+            <a href="https://github.com/features/copilot" class="button">Try GitHub Copilot</a>
+            <a href="https://githubuniverse.com/" class="button">Attend GitHub Universe</a>
+          </div>
           <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         </div>
+      </div>
+      <div class="container">
+        <nav class="nav-categories">
+          <a href="{{ '/ai-ml/' | url }}">AI & ML</a>
+          <a href="{{ '/developer-skills/' | url }}">Developer skills</a>
+          <a href="{{ '/engineering/' | url }}">Engineering</a>
+          <a href="{{ '/enterprise-software/' | url }}">Enterprise software</a>
+          <a href="{{ '/news-insights/' | url }}">News & insights</a>
+          <a href="{{ '/open-source/' | url }}">Open Source</a>
+          <a href="{{ '/security/' | url }}">Security</a>
+        </nav>
       </div>
     </header>
 
@@ -54,15 +55,48 @@
             </form>
           </div>
           <div class="footer-links">
-            <a href="{{ '/' | url }}">Home</a>
-            <a href="{{ '/blog/' | url }}">Blog</a>
-            <a href="{{ '/about/' | url }}">About</a>
-            <a href="{{ '/contact/' | url }}">Contact</a>
-            <a href="{{ '/privacy/' | url }}">Privacy Policy</a>
-            <a href="{{ '/terms/' | url }}">Terms of Service</a>
+            <div class="footer-links-column">
+              <h4>Product</h4>
+              <a href="https://github.com/features">Features</a>
+              <a href="https://github.com/security">Security</a>
+              <a href="https://github.com/enterprise">Enterprise</a>
+              <a href="https://github.com/customer-stories?type=enterprise">Customer Stories</a>
+              <a href="https://github.com/pricing">Pricing</a>
+              <a href="https://resources.github.com/">Resources</a>
+            </div>
+            <div class="footer-links-column">
+              <h4>Platform</h4>
+              <a href="https://developer.github.com/">Developer API</a>
+              <a href="https://partner.github.com/">Partners</a>
+              <a href="https://atom.io/">Atom</a>
+              <a href="https://www.electronjs.org/">Electron</a>
+              <a href="https://desktop.github.com/">GitHub Desktop</a>
+            </div>
+            <div class="footer-links-column">
+              <h4>Support</h4>
+              <a href="https://docs.github.com/">Docs</a>
+              <a href="https://github.community/">Community Forum</a>
+              <a href="https://services.github.com/">Training</a>
+              <a href="https://www.githubstatus.com/">Status</a>
+              <a href="https://support.github.com/">Contact</a>
+            </div>
+            <div class="footer-links-column">
+              <h4>Company</h4>
+              <a href="https://github.com/about">About</a>
+              <a href="{{ '/' | url }}">Blog</a>
+              <a href="https://github.com/about/careers">Careers</a>
+              <a href="https://github.com/about/press">Press</a>
+              <a href="https://shop.github.com/">Shop</a>
+            </div>
           </div>
         </div>
-        <p class="copyright">&copy; 2024 My Tech Blog. All rights reserved.</p>
+        <div class="footer-bottom">
+          <p class="copyright">&copy; 2024 My Tech Blog. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="https://docs.github.com/en/github/site-policy/github-terms-of-service">Terms</a>
+            <a href="https://docs.github.com/en/github/site-policy/github-privacy-statement">Privacy</a>
+          </div>
+        </div>
       </div>
     </footer>
     <script src="{{ '/js/main.js' | url }}"></script>
