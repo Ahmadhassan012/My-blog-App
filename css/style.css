@@ -73,6 +73,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -105,7 +106,6 @@ body {
     border-radius: 4px;
     font-size: 1em;
 }
-
 .search-form button {
     padding: 8px 12px;
     border: 1px solid var(--button-bg);
@@ -115,7 +115,6 @@ body {
     margin-left: 5px;
     cursor: pointer;
 }
-
 
 /* Main content */
 .main {
