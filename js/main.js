@@ -49,3 +49,29 @@ const scrollObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.fade-in-section').forEach(section => {
   scrollObserver.observe(section);
 });
+
+// Newsletter Form
+const newsletterForm = document.querySelector('.newsletter-form');
+const newsletterInput = newsletterForm.querySelector('input[type="email"]');
+const newsletterButton = newsletterForm.querySelector('button');
+
+newsletterForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const email = newsletterInput.value;
+  if (validateEmail(email)) {
+    newsletterInput.style.display = 'none';
+    newsletterButton.style.display = 'none';
+
+    const confirmationMessage = document.createElement('p');
+    confirmationMessage.textContent = 'Thank you for subscribing!';
+    newsletterForm.appendChild(confirmationMessage);
+  } else {
+    alert('Please enter a valid email address.');
+  }
+});
+
+function validateEmail(email) {
+  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}

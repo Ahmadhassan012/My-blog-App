@@ -12,12 +12,25 @@
       <div class="container">
         <a href="{{ '/' | url }}" class="logo">My Tech Blog</a>
         <div class="nav-wrapper">
-          <nav class="nav">
+          <nav class="nav" aria-label="Main navigation">
             <a href="{{ '/' | url }}">Home</a>
             <a href="{{ '/blog/' | url }}">Blog</a>
+            <a href="{{ '/changelog/' | url }}">Changelog</a>
+            <div class="dropdown">
+              <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false" aria-controls="categories-dropdown">Categories</button>
+              <div class="dropdown-content" id="categories-dropdown">
+                {% for tag in collections.tagsList %}
+                  <a href="/tags/{{ tag | slug }}/">{{ tag }}</a>
+                {% endfor %}
+              </div>
+            </div>
             <a href="{{ '/about/' | url }}">About</a>
             <a href="{{ '/contact/' | url }}">Contact</a>
           </nav>
+          <form action="/search" method="get" class="search-form">
+            <input type="search" name="q" placeholder="Search..." aria-label="Search">
+            <button type="submit">Search</button>
+          </form>
           <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         </div>
       </div>
@@ -45,6 +58,8 @@
             <a href="{{ '/blog/' | url }}">Blog</a>
             <a href="{{ '/about/' | url }}">About</a>
             <a href="{{ '/contact/' | url }}">Contact</a>
+            <a href="{{ '/privacy/' | url }}">Privacy Policy</a>
+            <a href="{{ '/terms/' | url }}">Terms of Service</a>
           </div>
         </div>
         <p class="copyright">&copy; 2024 My Tech Blog. All rights reserved.</p>
