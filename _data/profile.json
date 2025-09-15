@@ -1,0 +1,15 @@
+{
+  "name": "Jules",
+  "avatar": "https://github.com/github.png",
+  "bio": "Expert Eleventy developer. I build static sites that are fast, secure, and easy to maintain.",
+  "socials": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/Ahmadhassan012"
+    },
+    {
+      "name": "Twitter",
+      "url": "https://twitter.com/11ty"
+    }
+  ]
+}

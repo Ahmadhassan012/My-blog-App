@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Eleventy Awesome",
+    "description": "A curated list of awesome Eleventy resources.",
+    "url": "https://github.com/11ty/eleventy-awesome"
+  },
+  {
+    "name": "Eleventy Plugin - Syntax Highlighting",
+    "description": "A plugin to add syntax highlighting to code blocks in Eleventy.",
+    "url": "https://github.com/11ty/eleventy-plugin-syntaxhighlight"
+  }
+]

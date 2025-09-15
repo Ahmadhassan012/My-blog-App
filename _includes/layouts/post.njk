@@ -1,0 +1,17 @@
+---
+layout: "layouts/base.njk"
+---
+<article>
+  <h1>{{ title }}</h1>
+  <p>Published on {{ date | readableDate }}</p>
+  {% if tags %}
+  <p>
+    Tags:
+    {% for tag in tags %}
+      <a href="/tags/{{ tag }}/" class="tag">{{ tag }}</a>
+    {% endfor %}
+  </p>
+  {% endif %}
+
+  {{ content | safe }}
+</article>
